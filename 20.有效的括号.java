@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 /*
  * @lc app=leetcode.cn id=20 lang=java
  *
@@ -59,7 +63,26 @@
 class Solution {
     public boolean isValid(String s) {
         if (s.length() == 0) return true;
-        
+        if (s.length() % 2 != 0) return false;
+        Map<Character, Character> map = new HashMap<Character, Character>() {{
+            put('(', ')');
+            put('{', '}');
+            put('[', ']');
+        }};
+        // char[] s_char = s.toCharArray();
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (map.containsKey(ch)) {
+                stack.add(ch);
+            } else {
+                if (stack.isEmpty()) return false;
+                if (map.get(stack.peek()) == ch) stack.pop();
+            }
+        }
+
+        return stack.isEmpty();
     }
 }
 // @lc code=end
