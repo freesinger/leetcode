@@ -39,17 +39,20 @@
 // @lc code=start
 class Solution {
     public String longestCommonPrefix(String[] strs) {
-        int len = Integer.MAX_VALUE;
-        String res = "";
-        for (int i = 0; i < strs.length; i++) {
-            len = Math.min(strs[i].length(), len);
-        }
-
-        for (int i = 0; i < len; i++) {
-            for (int j = 0; i < strs.length; j++) {
-                if (strs[j].charAt(i) == strs[j+1].charAt(i) == )
+        // int len = Integer.MAX_VALUE;
+        // String res = "";
+        if (strs.length == 0) return "";
+        // for (int i = 0; i < strs.length; i++) {
+        //     len = Math.min(strs[i].length(), len);
+        // }
+        String str = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(str) != 0) {
+                str = str.substring(0, str.length()-1);
+                if (str.isEmpty()) return "";
             }
         }
+        return str;
     }
 }
 // @lc code=end

@@ -48,7 +48,7 @@ class Solution {
         if (x < 0 || x%10 == 0) return false;
        
         char[] str_x = String.valueOf(x).toCharArray();
-        for (int i = 0; i < str_x.length/2; i++)  {
+        for (int i = 0; i < str_x.length/2; i++) {
             if (str_x[i] != str_x[str_x.length-1-i]) return false;
         }
         
