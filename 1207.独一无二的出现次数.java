@@ -58,6 +58,7 @@ import java.util.Set;
 // @lc code=start
 class Solution {
     public boolean uniqueOccurrences(int[] arr) {
+        if (arr.length == 1 || arr.length == 0) return true;
         Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < arr.length; i++) {
