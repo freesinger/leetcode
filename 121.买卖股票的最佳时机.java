@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * @lc app=leetcode.cn id=121 lang=java
  *
@@ -39,7 +41,19 @@
 // @lc code=start
 class Solution {
     public int maxProfit(int[] prices) {
-        
+        if (prices == null || prices.length <= 1) return 0;
+        int max_profit = 0;
+        // for (int pre = 0; pre < prices.length-1; pre++) {
+        //     for (int cur = pre + 1; cur < prices.length; cur++) {
+        //         max_profit = Math.max(max_profit, prices[cur]-prices[pre]);
+        //     }
+        // }
+        int min_price = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            max_profit = Math.max(max_profit, prices[i]-min_price);
+            if (prices[i] <= min_price) min_price = prices[i];
+        }
+        return max_profit;
     }
 }
 // @lc code=end
