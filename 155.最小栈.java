@@ -1,0 +1,156 @@
+import java.util.Stack;
+
+/*
+ * @lc app=leetcode.cn id=155 lang=java
+ *
+ * [155] 最小栈
+ *
+ * https://leetcode-cn.com/problems/min-stack/description/
+ *
+ * algorithms
+ * Easy (50.43%)
+ * Likes:    331
+ * Dislikes: 0
+ * Total Accepted:    58.5K
+ * Total Submissions: 115.7K
+ * Testcase Example:  '["MinStack","push","push","push","getMin","pop","top","getMin"]\n[[],[-2],[0],[-3],[],[],[],[]]'
+ *
+ * 设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
+ * 
+ * 
+ * push(x) -- 将元素 x 推入栈中。
+ * pop() -- 删除栈顶的元素。
+ * top() -- 获取栈顶元素。
+ * getMin() -- 检索栈中的最小元素。
+ * 
+ * 
+ * 示例:
+ * 
+ * MinStack minStack = new MinStack();
+ * minStack.push(-2);
+ * minStack.push(0);
+ * minStack.push(-3);
+ * minStack.getMin();   --> 返回 -3.
+ * minStack.pop();
+ * minStack.top();      --> 返回 0.
+ * minStack.getMin();   --> 返回 -2.
+ * 
+ * 
+ */
+
+// @lc code=start
+
+class MinStack {
+    private Stack<Integer> data;
+    private Stack<Integer> minElems;
+    /** initialize your data structure here. */
+    public MinStack() {
+        data = new Stack<Integer>();
+        minElems = new Stack<Integer>();
+    }
+    
+    public void push(int x) {
+        if (minElems.isEmpty()) {
+            minElems.push(x);
+        } else {
+            if (x <=  minElems.peek()) {
+                minElems.push(x);
+            }
+        }
+        data.push(x);
+    }
+    
+    public void pop() {
+        int datatop = data.pop();
+        if (datatop == minElems.peek()) {
+            minElems.pop();
+        }
+        //data.pop();
+        //System.out.println(minElems);
+    }
+    
+    public int top() {
+        return data.peek();
+    }
+    
+    public int getMin() {
+        return minElems.peek();
+    }
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
+// class MinStack {
+//     private final int EXPAND_RATIO = 2;
+//     private int count, capacity, min;
+//     int[] storage;
+
+//     /** initialize your data structure here. */
+//     public MinStack() {
+//         count = 0;
+//         capacity = 10;
+//         storage = new int[capacity];
+//     }
+
+//     public MinStack(int count, int capacity) {
+//         this.count = count;
+//         this.capacity = capacity;
+//     }
+    
+//     public void push(int x) {
+//         if (isFull()) expandStack();
+//         storage[count++] = x;
+//     }
+    
+//     public void pop() {
+//         if (isEmpty()) throw new IllegalArgumentException("Stack is empty!");
+//         else {
+//             count--;
+//             // storage = Arrays.copyOfRange(storage, 0, count-1);
+//         }
+//     }
+    
+//     public int top() {
+//         if (isEmpty()) throw new IllegalArgumentException("Stack is empty!");
+//         else return storage[count-1];
+//     }
+    
+//     public int getMin() {
+//         min = Integer.MAX_VALUE;
+//         for (int i = 0; i < count; i++) min = Math.min(min, storage[i]);
+//         return min;
+//     }
+
+//     private boolean isFull() {
+//         if (count < capacity) return false;
+//         else return true;
+//     }
+
+//     private boolean isEmpty() {
+//         if (count == 0) return true;
+//         else return false;
+//     }
+
+//     private void expandStack() {
+//         if (isFull()) {
+//             storage = Arrays.copyOf(storage, storage.length *EXPAND_RATIO);
+//         }
+//     }
+// }
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
+// @lc code=end
+
