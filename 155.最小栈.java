@@ -65,8 +65,6 @@ class MinStack {
         if (datatop == minElems.peek()) {
             minElems.pop();
         }
-        //data.pop();
-        //System.out.println(minElems);
     }
     
     public int top() {
