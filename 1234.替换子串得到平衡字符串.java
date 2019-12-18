@@ -86,14 +86,14 @@ class Solution {
             else map.put(ch, map.get(ch)+1);
         }
 
-        boolean isBalance = true;
-        for (int v : map.values()) {
-            if (v != balance) {
-                isBalance = false;
-                break;
-            }
-        }
-        if (isBalance) return 0;
+        // boolean isBalance = true;
+        // for (int v : map.values()) {
+        //     if (v != balance) {
+        //         isBalance = false;
+        //         break;
+        //     }
+        // }
+        // if (isBalance) return 0;
 
         // Sliding window
         int left = 0, right = 0;
@@ -102,8 +102,8 @@ class Solution {
 
         while (right < len) {
             map.put(s.charAt(right), map.get(s.charAt(right))-1);
-            // 如果未先判断isBalance，则需要改成 left < len
-            while (getMapMaximum(map) <= balance && left <= right) {
+            // 如果先判断isBalance，则可改成 left <= right
+            while (getMapMaximum(map) <= balance && left < len) {
                 min_replace = Math.min(min_replace, right-left+1);
                 map.put(s.charAt(left), map.get(s.charAt(left))+1);
                 left++;
