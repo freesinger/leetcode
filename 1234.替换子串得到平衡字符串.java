@@ -1,9 +1,6 @@
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
-import javafx.scene.effect.Blend;
 
 /*
  * @lc app=leetcode.cn id=1234 lang=java
