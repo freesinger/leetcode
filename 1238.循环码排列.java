@@ -57,15 +57,16 @@ import java.util.List;
 class Solution {
     public List<Integer> circularPermutation(int n, int start) {
         List<Integer> ans = new ArrayList<Integer>();
-        //int[] ans = new int[1 << n];
         boolean[] vis = new boolean[1 << n];
-        // ans[0] = start;
         ans.add(start);
         vis[start] = true;
 
         for (int i = 1; i < (1 << n); i++) {
             for (int j = 0; j < n; j++) {
+                // 1 << j实现从低位向高位依次翻转，默认为0开始
+                // start ^ 转化为当前满足的数（相当给了offset）
                 int t = start ^ (1 << j);
+                // 若未在结果中出现则写入
                 if (!vis[t]) {
                     start = t;
                     break;
@@ -73,7 +74,6 @@ class Solution {
             }
             vis[start] = true;
             ans.add(start);
-            //ans[i] = start;
         }
 
         return ans;
