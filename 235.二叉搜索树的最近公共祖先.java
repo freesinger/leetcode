@@ -60,10 +60,10 @@
  */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // 利用排序二叉树性质进行递归
         if (root == null) return root;
         if ((p.val < root.val && q.val > root.val) || (p.val > root.val && q.val < root.val)) return root;
-        if (p.val == root.val) return p;
-        if (q.val == root.val) return q;
+        if (p.val == root.val || q.val == root.val) return root;
         if (p.val < root.val)  root = lowestCommonAncestor(root.left, p, q);
         else root = lowestCommonAncestor(root.right, p, q);
         return root;
