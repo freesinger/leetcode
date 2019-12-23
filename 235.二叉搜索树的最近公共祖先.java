@@ -60,19 +60,12 @@
  */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        //if (root == null) return root;
-        if ((p.val < root.val && q.val > root.val) || (p.val > root.val && q.val < root.val)) {
-            return root;
-        }
-        if (p.val == root.val) {
-            //System.out.println("Check2");
-            return p;
-        }
-        if (q.val == root.val) {
-            return q;
-        }
-        if (p.val < root.val) lowestCommonAncestor(root.left, p, q);
-        else lowestCommonAncestor(root.right, p, q);
+        if (root == null) return root;
+        if ((p.val < root.val && q.val > root.val) || (p.val > root.val && q.val < root.val)) return root;
+        if (p.val == root.val) return p;
+        if (q.val == root.val) return q;
+        if (p.val < root.val)  root = lowestCommonAncestor(root.left, p, q);
+        else root = lowestCommonAncestor(root.right, p, q);
         return root;
     }
 }
