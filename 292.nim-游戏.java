@@ -29,8 +29,9 @@
 
 // @lc code=start
 class Solution {
+    // boolean right = true;
     public boolean canWinNim(int n) {
-        
+        return (n % 4 != 0);
     }
 }
 // @lc code=end
