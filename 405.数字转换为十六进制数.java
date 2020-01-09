@@ -49,7 +49,7 @@
 
 // @lc code=start
 class Solution {
-    char[] map = "123456789abcdef".toCharArray();
+    char[] map = "0123456789abcdef".toCharArray();
     public String toHex(int num) {
         
         if (num == 0) return "0";
@@ -65,13 +65,16 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         int left;
     
-        while (num > 16) {
-            // res = num / 16;
-            left = num % 16;
-            num /= 16;
-            sb.append(map[left-1]);
+        if (num > 0) {
+            while (num > 16) {
+                left = num % 16;
+                num /= 16;
+                sb.insert(0, map[left]);
+            }
+            sb.insert(0, map[num]);
+        } else {
+            
         }
-        sb.insert(0, map[num-1]);
 
         return sb.toString();
     }
