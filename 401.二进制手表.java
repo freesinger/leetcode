@@ -47,6 +47,7 @@ import java.util.List;
 
 // @lc code=start
 class Solution {
+    // TODO
     public List<String> readBinaryWatch(int num) {
         List<String> res = new ArrayList<>();
 
