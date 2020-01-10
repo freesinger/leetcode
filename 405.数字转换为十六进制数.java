@@ -49,7 +49,6 @@
 
 // @lc code=start
 class Solution {
-    
     public String toHex(int num) {
         if (num == 0) return "0";
         else return hex(num);
