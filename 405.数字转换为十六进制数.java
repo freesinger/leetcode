@@ -49,35 +49,40 @@
 
 // @lc code=start
 class Solution {
-    char[] map = "0123456789abcdef".toCharArray();
+    
     public String toHex(int num) {
-        
         if (num == 0) return "0";
-        if (num > 0) return hex(num);
-        else {
-
-        }
-
-        return "";
+        else return hex(num);
     }
 
     private String hex(int num) {
+        char[] map = "0123456789abcdef".toCharArray();
         StringBuilder sb = new StringBuilder();
-        int left;
-    
-        if (num > 0) {
-            while (num > 16) {
-                left = num % 16;
-                num /= 16;
-                sb.insert(0, map[left]);
-            }
-            sb.insert(0, map[num]);
-        } else {
-            
+
+        while (sb.length() < 8 && num != 0) {
+            sb.insert(0, map[num & 0xf]);
+            num >>= 4;
         }
 
         return sb.toString();
     }
+    // private String hex(int num) {
+    //     StringBuilder sb = new StringBuilder();
+    //     int left;
+    
+    //     if (num > 0) {
+    //         while (num != 0) {
+    //             left = num % 16;
+    //             num /= 16;
+    //             sb.insert(0, map[left]);
+    //         }
+            
+    //     } else {
+            
+    //     }
+
+    //     return sb.toString();
+    // }
 }
 // @lc code=end
 
