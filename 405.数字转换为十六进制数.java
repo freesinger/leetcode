@@ -60,6 +60,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
 
         while (sb.length() < 8 && num != 0) {
+            // 2进制不断取低四位
             sb.insert(0, map[num & 0xf]);
             num >>= 4;
         }
