@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /*
  * @lc app=leetcode.cn id=414 lang=java
  *
@@ -64,27 +62,34 @@ class Solution {
             if (nums[i] != nums[i+1]) {
                 first = Math.max(nums[i], nums[i+1]);
                 second = Math.min(nums[i], nums[i+1]);
+                start = (i+2) >= nums.length ? i+1 : i+2;
+                break;
             } else start++;
         }
-        System.out.println(first);
-        System.out.println(second);
-        System.out.println(start);
+        // System.out.println(first);
+        // System.out.println(second);
+        // System.out.println(third);
+        // System.out.println(start);
         
+        int flag = 2;
         for (int i = start; i < nums.length; i++) {
             if (nums[i] > first) {
                 int tmp = second;
                 second = first;
                 first = nums[i];
                 third = tmp;
+                flag++;
             } else if (nums[i] > second && nums[i] < first) {
                 third = second;
                 second = nums[i];
-            } else if (nums[i] > third) {
+                flag++;
+            } else if (nums[i] >= third && nums[i] != first && nums[i] != second) {
                 third = nums[i];
+                flag++;
             } else continue;
         }
 
-        return third;
+        return (third == second || (third == Integer.MIN_VALUE && flag < 3)) ? first : third;
         // Arrays.sort(nums);
         // int cnt = 1, max = nums[0], id = 1;
         // while (cnt != 3 && id < nums.length) {
