@@ -54,10 +54,11 @@ class Solution {
         if (nums.length == 1) return nums[0];
         if (nums.length == 2) return Math.max(nums[0], nums[1]);
 
-        int first = Math.max(nums[0], nums[1]), second = Math.min(nums[0], nums[1]), third = Integer.MIN_VALUE;
+        int first = Integer.MIN_VALUE, second = Integer.MIN_VALUE, third = Integer.MIN_VALUE;
         // int first, second, third = Integer.MIN_VALUE;
         int start = 0;
 
+        // 寻找第一次出现无重的第一第二大数
         for (int i = 0; i < nums.length-1; i++) {
             if (nums[i] != nums[i+1]) {
                 first = Math.max(nums[i], nums[i+1]);
@@ -84,6 +85,7 @@ class Solution {
                 second = nums[i];
                 flag++;
             } else if (nums[i] >= third && nums[i] != first && nums[i] != second) {
+                // 第三小数的判断条件很复杂
                 third = nums[i];
                 flag++;
             } else continue;
