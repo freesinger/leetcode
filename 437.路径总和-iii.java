@@ -57,7 +57,6 @@ import javax.swing.tree.TreeNode;
 class Solution {
     
     public int pathSum(TreeNode root, int sum) {
-        final int static_number = sum;
         int cnt = 0;
         if (root == null) return 0;
         if (root.val == sum) {
@@ -71,11 +70,11 @@ class Solution {
         }
         if (root.left != null) {
             cnt += pathSum(root.left, sum-root.val);
-            cnt += pathSum(root.left, static_number);
+            cnt += pathSum(root.left, sum);
         }
         if (root.right != null) {
             cnt += pathSum(root.right, sum-root.val);
-            cnt += pathSum(root.right, static_number);
+            cnt += pathSum(root.right, sum);
         }
 
         return cnt;
