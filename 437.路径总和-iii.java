@@ -1,3 +1,5 @@
+import javax.swing.tree.TreeNode;
+
 /*
  * @lc app=leetcode.cn id=437 lang=java
  *
@@ -53,9 +55,45 @@
  * }
  */
 class Solution {
+    
     public int pathSum(TreeNode root, int sum) {
-        
+        final int static_number = sum;
+        int cnt = 0;
+        if (root == null) return 0;
+        if (root.val == sum) {
+            // System.out.println(root.val);
+            // if (root.left != null) System.out.println(root.left.val);
+            // else System.out.println("null");
+            // if (root.right != null) System.out.println(root.right.val);
+            // else System.out.println("null");
+            cnt++;
+            
+        }
+        if (root.left != null) {
+            cnt += pathSum(root.left, sum-root.val);
+            cnt += pathSum(root.left, static_number);
+        }
+        if (root.right != null) {
+            cnt += pathSum(root.right, sum-root.val);
+            cnt += pathSum(root.right, static_number);
+        }
+
+        return cnt;
     }
+
+    // private int nodeSum(TreeNode root, int sum, int rawSum) {
+    //     int cnt = 0;
+    //     if (root == null) return 0;
+    //     if (root.val == sum) cnt++;
+    //     if (root.left != null) {
+    //         cnt += nodeSum(root.left, sum-root.val, rawSum);
+    //         cnt += nodeSum(root.left, rawSum);
+    //     }
+    //     if (root.right != null) {
+    //         cnt += nodeSum(root.right, sum-root.val, rawSum);
+    //         cnt += nodeSum(root.right, sum, rawSum)
+    //     }
+    // }
 }
 // @lc code=end
 
