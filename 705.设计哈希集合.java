@@ -68,11 +68,12 @@ class MyHashSet {
     
     /** Returns true if this set contains the specified element */
     public boolean contains(int key) {
-        if (lookup[key]) {
-            return true;
-        } else {
-            return false;
-        }
+        // if (lookup[key]) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+        return lookup[key];
     }
 }
 
