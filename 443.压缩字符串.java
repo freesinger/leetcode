@@ -82,7 +82,22 @@ class Solution {
     public int compress(char[] chars) {
         if (chars.length == 1) return 1;
 
-        
+        int left = 0, size = 0;
+
+        // 滑动窗口 
+        for (int right = 0; right <= chars.length; right++) {
+            // 数组右端需越界
+            if (right == chars.length || chars[left] != chars[right]) {
+                chars[size++] = chars[left];
+                if (right - left > 1)
+                    for (char c : String.valueOf(right - left).toCharArray())
+                        chars[size++] = c;
+                left = right;
+            }
+            
+        }
+
+        return size;
     }
 }
 // @lc code=end
