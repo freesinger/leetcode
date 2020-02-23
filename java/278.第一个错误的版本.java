@@ -6,11 +6,11 @@
  * https://leetcode-cn.com/problems/first-bad-version/description/
  *
  * algorithms
- * Easy (34.78%)
+ * Easy (34.81%)
  * Likes:    121
  * Dislikes: 0
- * Total Accepted:    31.2K
- * Total Submissions: 88K
+ * Total Accepted:    31K
+ * Total Submissions: 87.6K
  * Testcase Example:  '5\n4'
  *
  * 
@@ -39,7 +39,22 @@
 
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
-        
+        int left = 1, right = n;
+        while (left < right-1) {
+            // int mid = left + (right-left)/2;
+            int mid = left + ((right-left) >> 1);
+            // 溢出
+            // int mid = (left + right) >> 1;
+            // 运算符优先级错误
+            // int mid = left + (righ-left) >> 1;
+            if (isBadVersion(mid)) {
+                right = mid;
+            } else {
+                left = mid;
+            }
+        }
+        if (isBadVersion(left)) return left;
+        else return right;
     }
 }
 // @lc code=end
