@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /*
  * @lc app=leetcode.cn id=1047 lang=java
  *
@@ -43,8 +45,28 @@
 
 // @lc code=start
 class Solution {
+    /**
+     * 栈
+     * @param S
+     * @return
+     */
     public String removeDuplicates(String S) {
+        Stack<Character> s = new Stack<>();
+        String res = "";
 
+        for (char ch : S.toCharArray()) {
+            if (s.isEmpty()) {
+                s.push(ch);
+            } else if (s.peek().equals(ch)) {
+                s.pop();
+            } else {
+                s.push(ch);
+            }
+        }
+
+        while (!s.isEmpty()) res = s.pop() + res;
+
+        return res;
     }
 }
 // @lc code=end
