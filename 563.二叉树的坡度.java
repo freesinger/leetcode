@@ -81,38 +81,43 @@ class Solution {
 
         return left+right+node.val;
     }
-    
-    // List<Integer> tilts = new ArrayList<>();
 
-    // public int findTilt(TreeNode root) {
-    //     int tiltSum = 0;
 
-    //     nodeTilt(root);
-    //     for (int t : tilts) tiltSum += t;
+    /**
+     * 过分复杂
+     */
+    List<Integer> tilts = new ArrayList<>();
 
-    //     return tiltSum;
-    // }
+    @Deprecated
+    public int findTilt1(TreeNode root) {
+        int tiltSum = 0;
 
-    // private void nodeTilt(TreeNode node) {
-    //     if (node == null || (node.left == null && node.right == null)) return;
-    //     if (node.left == null) {
-    //         tilts.add(Math.abs(childSum(node.right)));
-    //         nodeTilt(node.right);
-    //     } else if (node.right == null) {
-    //         tilts.add(Math.abs(childSum(node.left)));
-    //         nodeTilt(node.left);
-    //     } else {
-    //         tilts.add(Math.abs(childSum(node.left)-childSum(node.right)));
-    //         nodeTilt(node.right);
-    //         nodeTilt(node.left);
-    //     }
-    // }
+        nodeTilt(root);
+        for (int t : tilts) tiltSum += t;
 
-    // private int childSum(TreeNode node) {
-    //     if (node == null) return 0;
-    //     // if (node.left == null && node.right == null) return node.val;
-    //     return childSum(node.left) + childSum(node.right) + node.val; 
-    // }
+        return tiltSum;
+    }
+
+    private void nodeTilt(TreeNode node) {
+        if (node == null || (node.left == null && node.right == null)) return;
+        if (node.left == null) {
+            tilts.add(Math.abs(childSum(node.right)));
+            nodeTilt(node.right);
+        } else if (node.right == null) {
+            tilts.add(Math.abs(childSum(node.left)));
+            nodeTilt(node.left);
+        } else {
+            tilts.add(Math.abs(childSum(node.left)-childSum(node.right)));
+            nodeTilt(node.right);
+            nodeTilt(node.left);
+        }
+    }
+
+    private int childSum(TreeNode node) {
+        if (node == null) return 0;
+        // if (node.left == null && node.right == null) return node.val;
+        return childSum(node.left) + childSum(node.right) + node.val; 
+    }
 }
 // @lc code=end
 
