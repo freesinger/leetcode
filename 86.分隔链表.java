@@ -37,6 +37,12 @@ import java.util.List;
  * }
  */
 class Solution {
+    /**
+     * 双指针 + 拼接链表
+     * @param head
+     * @param x
+     * @return
+     */
     public ListNode partition(ListNode head, int x) {
         ListNode lower = new ListNode(-1), largerequal = new ListNode(1);
         ListNode pre = lower, next = largerequal;
