@@ -65,7 +65,6 @@ class Solution {
         lower.next = next.next;
 
         return pre.next;
-
     }
 }
 // @lc code=end
