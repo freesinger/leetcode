@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.tree.TreeNode;
+
 /*
  * @lc app=leetcode.cn id=572 lang=java
  *
@@ -76,43 +78,64 @@ import java.util.List;
  * }
  */
 class Solution {
-    List<TreeNode> childs = new ArrayList<>();
-
+    /**
+     * 遍历检查子串
+     * 注意写入规则特殊
+     * @param s
+     * @param t
+     * @return
+     */
     public boolean isSubtree(TreeNode s, TreeNode t) {
-        List<Integer> tElements = new ArrayList<>();
+        StringBuilder sString = new StringBuilder();
+        StringBuilder tString = new StringBuilder();
+        inOrderParse(s, sString);
+        inOrderParse(t, tString);
+        return sString.toString().indexOf(tString.toString()) >= 0;
+    }
+
+    private void inOrderParse(TreeNode n, StringBuilder str){
+        if (n == null) return;
+        inOrderParse(n.left, str);
+        if (n.left == null) str.append("lnull");
+        // "#"处理数字防止 数字相连导致检测子数组出错
+        // 形式 s:[23, 4, 5] 和 t:[3, 4, 5] 的树也将给出一个 true 的结果
+        // 因为 t 的先序遍历字符串 (“23 4 lnull rnull 5 lnull rnull”) 将是 s 的先序遍历字符串 (“3 4 lnull rull 5 lnull rnull”) 的子字符串。
+        // 在节点值之前添加一个 “#” 可以解决这个问题。
+        str.append("#" + n.val);
+        if (n.right == null) str.append("rnull");
+        inOrderParse(n.right, str);
+    }
+    // List<TreeNode> childs = new ArrayList<>();
+
+    // public boolean isSubtree(TreeNode s, TreeNode t) {
+    //     List<Integer> tElements = new ArrayList<>();
         
-        inOrderParse(t, tElements);
-        findChild(s, t.val);
-        for (TreeNode node : childs) {
-            List<Integer> list = new ArrayList<>();
-            boolean isSubtree = true;
-            inOrderParse(node, list);
-            if (list.size() != tElements.size()) continue;
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) != tElements.get(i)) {
-                    isSubtree = false;
-                    break;
-                }
-            }
-            if (isSubtree) return true;
-        }
+    //     inOrderParse(t, tElements);
+    //     findChild(s, t.val);
+    //     // for (TreeNode n : childs) System.out.println(n.val);
+    //     for (TreeNode node : childs) {
+    //         List<Integer> list = new ArrayList<>();
+    //         boolean isSubtree = true;
+    //         inOrderParse(node, list);
+    //         if (list.size() != tElements.size()) continue;
+    //         for (int i = 0; i < list.size(); i++) {
+    //             if (list.get(i) != tElements.get(i)) {
+    //                 isSubtree = false;
+    //                 break;
+    //             }
+    //         }
+    //         if (isSubtree) return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
-    private void findChild(TreeNode n, int num) {
-        if (n == null) return;
-        findChild(n.left, num);
-        if (n.val == num) childs.add(n);
-        findChild(n.right, num);
-    }
-
-    private void inOrderParse(TreeNode n, List<Integer> l) {
-        if (n == null) return;
-        inOrderParse(n.left, l);
-        l.add(n.val);
-        inOrderParse(n.right, l);
-    }
+    // private void findChild(TreeNode n, int num) {
+    //     if (n == null) return;
+    //     findChild(n.left, num);
+    //     if (n.val == num) childs.add(n);
+    //     findChild(n.right, num);
+    // }
 }
 // @lc code=end
 
