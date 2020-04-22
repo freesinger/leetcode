@@ -55,31 +55,35 @@ import javax.swing.tree.TreeNode;
  * }
  */
 class Solution {
-    
+    /**
+     * 双重递归
+     */
+    private int cnt = 0;
     public int pathSum(TreeNode root, int sum) {
-        int cnt = 0;
-        if (root == null) return 0;
-        if (root.val == sum) {
-            // System.out.println(root.val);
-            // if (root.left != null) System.out.println(root.left.val);
-            // else System.out.println("null");
-            // if (root.right != null) System.out.println(root.right.val);
-            // else System.out.println("null");
-            cnt++;
-            
-        }
-        if (root.left != null) {
-            cnt += pathSum(root.left, sum-root.val);
-            cnt += pathSum(root.left, sum);
-        }
-        if (root.right != null) {
-            cnt += pathSum(root.right, sum-root.val);
-            cnt += pathSum(root.right, sum);
-        }
-
+        recursive(root, sum);
         return cnt;
     }
 
+    private void recursive(TreeNode node, int sum) {
+        if (node == null) return;
+        findSum(node, sum);
+        recursive(node.left, sum);
+        recursive(node.right, sum);
+    }
+
+    private void findSum(TreeNode node, int sum) {
+        if (node == null) return;
+        if (node.val == sum) cnt++;
+        if (node.left != null) {
+            findSum(node.left, sum-node.val);
+            // findSum(node.left, sum);
+        }
+        if (node.right != null) {
+            findSum(node.right, sum-node.val);
+            // findSum(node.right, sum);
+        }
+    }
+    
     // private int nodeSum(TreeNode root, int sum, int rawSum) {
     //     int cnt = 0;
     //     if (root == null) return 0;
