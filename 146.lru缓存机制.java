@@ -47,9 +47,9 @@ import java.util.Queue;
 
 // @lc code=start
 class LRUCache {
-    Map<Integer, Integer> map;
-    Queue<Integer> queue;
-    int capacity;
+    private Map<Integer, Integer> map;
+    private Queue<Integer> queue;
+    private int capacity;
 
     public LRUCache(int capacity) {
         queue = new LinkedList<>();
