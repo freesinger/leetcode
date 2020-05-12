@@ -1,7 +1,3 @@
-import java.util.List;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
-
 /*
  * @lc app=leetcode.cn id=92 lang=java
  *

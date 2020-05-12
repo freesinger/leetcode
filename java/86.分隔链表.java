@@ -7,10 +7,10 @@
  *
  * algorithms
  * Medium (53.66%)
- * Likes:    182
+ * Likes:    173
  * Dislikes: 0
- * Total Accepted:    32.6K
- * Total Submissions: 57.3K
+ * Total Accepted:    29.9K
+ * Total Submissions: 52.9K
  * Testcase Example:  '[1,4,3,2,5,2]\n3'
  *
  * 给定一个链表和一个特定值 x，对链表进行分隔，使得所有小于 x 的节点都在大于或等于 x 的节点之前。
@@ -35,31 +35,34 @@
  * }
  */
 class Solution {
+    /**
+     * 双指针 + 拼接链表
+     * @param head
+     * @param x
+     * @return
+     */
     public ListNode partition(ListNode head, int x) {
-        ListNode pre = new ListNode(-1);
-        ListNode last = new ListNode(1);
-        // ListNode dummyPre = new ListNode(0);
-        // ListNode dummyLast = new ListNode(1);
-        ListNode dummyPre = pre;
-        ListNode dummyLast = last;
+        ListNode lower = new ListNode(-1), largerequal = new ListNode(1);
+        ListNode pre = lower, next = largerequal;
+        // pre.next = lower;
+        // next.next = largerequal;
 
         while (head != null) {
             if (head.val < x) {
-                // pre.next = new ListNode(head.val);
-                pre.next = head;
-                pre = pre.next;
+                ListNode cur = new ListNode(head.val);
+                lower.next = cur;
+                lower = cur;
             } else {
-                // last.next = new ListNode(head.val);
-                last.next = head;
-                last = last.next;
+                ListNode cur = new ListNode(head.val);
+                largerequal.next = cur;
+                largerequal = cur;
             }
             head = head.next;
         }
 
-        last.next = null; // 不置null会导致循环链表
-        pre.next = dummyLast.next;
+        lower.next = next.next;
 
-        return dummyPre.next;
+        return pre.next;
     }
 }
 // @lc code=end
