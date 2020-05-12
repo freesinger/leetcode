@@ -1,3 +1,11 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
 /*
  * @lc app=leetcode.cn id=501 lang=java
  *
@@ -6,11 +14,11 @@
  * https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/description/
  *
  * algorithms
- * Easy (42.75%)
- * Likes:    68
+ * Easy (42.72%)
+ * Likes:    88
  * Dislikes: 0
- * Total Accepted:    6.9K
- * Total Submissions: 16.3K
+ * Total Accepted:    9.9K
+ * Total Submissions: 22.4K
  * Testcase Example:  '[1,null,2,2]'
  *
  * 给定一个有相同值的二叉搜索树（BST），找出 BST 中的所有众数（出现频率最高的元素）。
@@ -52,8 +60,37 @@
  * }
  */
 class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+
+    /**
+     * 遍历树用map存储再找满足条件众数
+     * @param root
+     * @return
+     */
     public int[] findMode(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
         
+        inOrder(root);
+
+        // 若root为null使用Collections.max()会throw noSuchElementException
+        try {
+            int maxNum = Collections.max(map.values());
+            // 遍历字典键值对
+            for (Map.Entry<Integer, Integer> entry : map.entrySet())
+                if (entry.getValue() == maxNum) res.add(entry.getKey());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        return res.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    private void inOrder(TreeNode root) {
+        if (root == null) return;
+        if (root.left != null) inOrder(root.left);
+        if (!map.containsKey(root.val)) map.put(root.val, 1);
+        else map.put(root.val, map.get(root.val)+1);
+        if (root.right != null) inOrder(root.right);
     }
 }
 // @lc code=end
