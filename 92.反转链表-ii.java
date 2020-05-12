@@ -1,6 +1,3 @@
-import java.security.KeyStore.Entry;
-import java.util.List;
-
 /*
  * @lc app=leetcode.cn id=92 lang=java
  *
@@ -38,14 +35,38 @@ import java.util.List;
  * }
  */
 class Solution {
+    /**
+     * 三指针
+     * 链表反转必须使用三个结点
+     * 否则会丢失结点
+     * @param head
+     * @param m
+     * @param n
+     * @return
+     */
     public ListNode reverseBetween(ListNode head, int m, int n) {
-        ListNode dummy = new ListNode(0);
+        ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        ListNode tmp = head;
+        ListNode start = dummy;
 
-        for (int i = 1; i < m; i++) tmp = tmp.next;
+        // 寻找开始结点
+        for (int i = 1; i < m; i++) start = start.next;
+ 
+        ListNode pre = null;
+        ListNode cur = start.next;
+        ListNode cur_next = null;
+        for (int j = m; j <= n; j++) {
+            cur_next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = cur_next;
+        }
+        
+        // 注意翻转后结点顺序
+        start.next.next = cur; // 此时pre.next != cur
+        start.next = pre;
 
-
+        return dummy.next;
     }
 }
 // @lc code=end
