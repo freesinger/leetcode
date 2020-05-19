@@ -53,7 +53,7 @@
 class Solution {
     /**
      * dp
-     * dp table增加的padding行列赋值重要
+     * 注意base case，也就是padding的行和列含义
      * 联系第1143最长公共子序列
      * @param word1
      * @param word2
@@ -63,8 +63,8 @@ class Solution {
         int w1 = word1.length(), w2 = word2.length();
         int dp[][] = new int[w1+1][w2+1];
 
-        for (int i = 1; i < w1+1; i++) dp[i][0] = dp[i-1][0] + 1;
-        for (int j = 1; j < w2+1; j++) dp[0][j] = dp[0][j-1] + 1;
+        for (int i = 1; i < w1+1; i++) dp[i][0] = i;
+        for (int j = 1; j < w2+1; j++) dp[0][j] = j;
 
         for (int i = 1; i < w1+1; i++) {
             for (int j = 1; j < w2+1; j++) {
