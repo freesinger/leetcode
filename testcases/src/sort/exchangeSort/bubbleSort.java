@@ -1,6 +1,6 @@
-package exchangeSort;
+package sort.exchangeSort;
 
-import static utils.tools.traceArray;
+import utils.tools;
 
 public class bubbleSort {
     /**
@@ -19,7 +19,7 @@ public class bubbleSort {
                     A[j] = A[j+1];
                     A[j+1] = t;
                 }
-            traceArray(A);
+            tools.traceArray(A);
         }
     }
 

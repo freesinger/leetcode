@@ -1,4 +1,4 @@
-package selectionSort;
+package sort.selectionSort;
 
 import static utils.tools.traceArray;
 
