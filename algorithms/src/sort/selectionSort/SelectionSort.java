@@ -1,8 +1,8 @@
 package sort.selectionSort;
 
-import static utils.tools.traceArray;
+import utils.Tools;
 
-public class selectionSort {
+public class SelectionSort {
     /**
      * 直接选择排序 (Unstable)
      * 每次遍历确定最小值，和无序数组首位交换
@@ -20,7 +20,7 @@ public class selectionSort {
             int t = A[minIdx];
             A[minIdx] = A[i];
             A[i] = t;
-            traceArray(A);
+            Tools.traceArray(A);
         }
 
     }

@@ -1,8 +1,8 @@
 package sort.insertionSort;
 
-import static utils.tools.traceArray;
+import utils.Tools;
 
-public class shellSort {
+public class ShellSort {
     /**
      * 变步长插排，适用于数组长度较长，较为无序的数组排序
      * 步长缩小过程中数组逐渐变得有序
@@ -26,7 +26,8 @@ public class shellSort {
                 }
                 array[i] = curNum;
             }
-            traceArray(array);
+            Tools.traceArray(array);
+
         }
 
     }

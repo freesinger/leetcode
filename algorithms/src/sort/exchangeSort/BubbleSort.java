@@ -1,8 +1,8 @@
 package sort.exchangeSort;
 
-import utils.tools;
+import utils.Tools;
 
-public class bubbleSort {
+public class BubbleSort {
     /**
      * 冒泡排序 （Stable）
      * 每趟确定一个第k大/小数，放到队尾/首
@@ -19,7 +19,7 @@ public class bubbleSort {
                     A[j] = A[j+1];
                     A[j+1] = t;
                 }
-            tools.traceArray(A);
+            Tools.traceArray(A);
         }
     }
 

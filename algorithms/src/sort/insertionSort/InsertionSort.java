@@ -1,8 +1,8 @@
 package sort.insertionSort;
 
-import static utils.tools.traceArray;
+import static utils.Tools.traceArray;
 
-public class insertionSort {
+public class InsertionSort {
     /**
      * 直接插入排序（Stable)
      * 数组始终保持结构：有序数组 + 无序数组
