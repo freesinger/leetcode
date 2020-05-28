@@ -1,4 +1,4 @@
 package sort.bucketSort;
 
-public class bucketSort {
+public class BucketSort {
 }
