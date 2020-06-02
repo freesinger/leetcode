@@ -30,16 +30,10 @@ public class HeapSort {
         largest = (left < heapSize && array[left] > array[largest]) ? left : largest;
         largest = (right < heapSize && array[right] > array[largest]) ? right : largest;
         if (largest != curId) {
-            swap(array, largest, curId);
+            Tools.swapByIndex(array, largest, curId);
             // 每次交换元素后都需要对改变的结点递归
             heapify(heapSize, largest);
         }
-    }
-
-    private void swap(int[] A, int i, int j) {
-        int tmp = A[i];
-        A[i] = A[j];
-        A[j] = tmp;
     }
 
     private void heapSort() {
@@ -48,7 +42,7 @@ public class HeapSort {
         Tools.traceArray(array);
         int heapSize = array.length;
         for (int i = heapSize-1; i >= 0; i--) {
-            swap(array, i, 0);
+            Tools.swapByIndex(array, i, 0);
             Tools.traceArray(array);
             heapSize--;
             heapify(heapSize, 0);
