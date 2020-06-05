@@ -1,5 +1,10 @@
 package sort.insertionSort;
 
+import utils.Tools;
+
+import java.util.List;
+
+import static utils.Tools.intArrayToList;
 import static utils.Tools.traceArray;
 
 public class InsertionSort {
@@ -12,7 +17,7 @@ public class InsertionSort {
      *
      * @param A
      */
-    private static void insertionSort(int[] A) {
+    private void insertionSort(int[] A) {
         for (int i = 1; i < A.length; i++) {
             int cur = A[i];
             int j = i-1;
@@ -25,10 +30,25 @@ public class InsertionSort {
         }
     }
 
+    private void insertionSort(List<Integer> list) {
+            for (int i = 1; i < list.size(); i++) {
+                int cur = list.get(i);
+                int j = i-1;
+                while (j >= 0 && list.get(j) > cur) {
+                    list.set(j+1, list.get(j));
+                    j--;
+                }
+                list.set(j+1, cur);
+                Tools.traceList(list);
+            }
+        }
 
-    public static void main(String[] args) {
-        int[] arrayToSort = new int[] {8, 3, 1, 5, 2, 1};
-        insertionSort(arrayToSort);
+        public static void main(String[] args) {
+            int[] arrayToSort = new int[] {8, 3, 1, 5, 2, 1};
+            // List<Integer> list = Arrays.stream(arrayToSort).boxed().collect(Collectors.toList());
+            List<Integer> list = intArrayToList(arrayToSort);
+            new InsertionSort().insertionSort(arrayToSort);
+            new InsertionSort().insertionSort(list);
         return;
     }
 }

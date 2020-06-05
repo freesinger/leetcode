@@ -5,6 +5,7 @@ import utils.Tools;
 import java.util.Arrays;
 
 /**
+ * Divide-Conquer
  * 每一趟都确定数组末尾数的位置，再分别对该数左右数组递归调用sort
  * 双指针实现每趟partition为线性时间
  *

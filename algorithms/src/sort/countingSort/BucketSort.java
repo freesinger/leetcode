@@ -1,4 +1,4 @@
-package sort.bucketSort;
+package sort.countingSort;
 
 public class BucketSort {
 }
