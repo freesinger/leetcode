@@ -6,7 +6,7 @@ public abstract class AbstractSort extends BaseSortActions {
     private int[] array;
     private List<Integer> list;
 
-    // 有带参的构造函数时必须显式指定默认构造函数
+    // 有带参的构造函数时必须显式声明默认构造函数
     public AbstractSort() {};
 
     public AbstractSort(int[] array) {

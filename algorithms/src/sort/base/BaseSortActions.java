@@ -12,6 +12,8 @@ public class BaseSortActions {
     private int[] array;
     private List<Integer> list;
 
+    public static final int TEN = 10;
+
     protected static Logger logger = LoggerFactory.getLogger(BaseSortActions.class);
 
     public BaseSortActions() {};
@@ -77,7 +79,9 @@ public class BaseSortActions {
     }
 
 
-    public void sort(List<Integer> list) {};
+    public void sort(List<Integer> list) {}
 
-    public void sort(int[] array) {};
+    public void sort(int[] array) {}
+
+    public void sort() {}
 }
