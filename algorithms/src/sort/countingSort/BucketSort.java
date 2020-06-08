@@ -5,6 +5,7 @@ import src.sort.base.AbstractSort;
 import src.sort.insertionSort.InsertionSort;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static src.utils.Tools.intArrayToList;
@@ -21,14 +22,17 @@ public class BucketSort extends AbstractSort {
     // 每一条隐式调用都省略了super()
     public BucketSort(int[] arrayToSort) {
         super(arrayToSort);
+        this.arrayToSort = arrayToSort;
     }
 
     public BucketSort(List<Integer> list) {
         super(list);
+        this.list = list;
     }
 
     // 调用父类无参constructor
     public BucketSort(List<Integer> list, int bucketNumber, List<Integer> result) {
+        super();
         this.list = list;
         this.bucketNumber = bucketNumber;
         this.result = result;
@@ -36,6 +40,8 @@ public class BucketSort extends AbstractSort {
 
     @Override
     public void sort() {
+        System.out.println(Arrays.toString(super.getArray()));
+        traceList(super.getList());
         bucketSort();
     }
 
