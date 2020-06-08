@@ -1,4 +1,4 @@
-package src.sort.countingSort;
+package src.sort.distributionSort;
 
 import src.utils.Tools;
 
@@ -15,7 +15,7 @@ public class CountingSort {
 
     public void countingSort() {
         int maxVal = Integer.MIN_VALUE;
-        for (int num : arr) maxVal = maxVal < num ? num : maxVal;
+        for (int num : arr) maxVal = Math.max(maxVal, num);
 
         int[] bucket = new int[maxVal+1];
         for (int num : arr) bucket[num]++;

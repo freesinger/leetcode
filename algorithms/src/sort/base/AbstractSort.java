@@ -2,15 +2,11 @@ package src.sort.base;
 
 import java.util.List;
 
-import lombok.Data;
-
-@Data
-public abstract class AbstractSort {
+public abstract class AbstractSort extends BaseSortActions {
     private int[] array;
     private List<Integer> list;
-//    private int bucketNumber;
-//    private List<Integer> result;
 
+    // 有带参的构造函数时必须显式指定默认构造函数
     public AbstractSort() {};
 
     public AbstractSort(int[] array) {
@@ -21,14 +17,9 @@ public abstract class AbstractSort {
         this.list = list;
     }
 
-//    public AbstractSort(List<Integer> list, int bucketNumber, List<Integer> result) {
-//        this.list = list;
-//        this.bucketNumber = bucketNumber;
-//        this.result = result;
-//    }
-
     // 抽象类的抽象方法在实现类中必须Override实现
     public abstract void sort();
+//
 //    public abstract void sort(int[] array);
 //
 //    public abstract void sort(List<Integer> list);

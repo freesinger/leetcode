@@ -1,7 +1,8 @@
-package src.sort.countingSort;
+package src.sort.distributionSort;
 
 
 import src.sort.base.AbstractSort;
+import src.sort.base.Sorts;
 import src.sort.insertionSort.InsertionSort;
 
 import java.util.ArrayList;
@@ -11,12 +12,13 @@ import java.util.List;
 import static src.utils.Tools.intArrayToList;
 import static src.utils.Tools.traceList;
 
-public class BucketSort extends AbstractSort {
+public class BucketSort extends AbstractSort implements Sorts {
     private int[] arrayToSort;
     private List<Integer> list;
     private int bucketNumber;
     private List<Integer> result;
 
+    public BucketSort() {};
 
     // 子类不继承父类构造器，只是显式(super)或隐式调用
     // 每一条隐式调用都省略了super()
@@ -32,7 +34,7 @@ public class BucketSort extends AbstractSort {
 
     // 调用父类无参constructor
     public BucketSort(List<Integer> list, int bucketNumber, List<Integer> result) {
-        super();
+        // super(list, bucketNumber, result);
         this.list = list;
         this.bucketNumber = bucketNumber;
         this.result = result;
@@ -40,8 +42,8 @@ public class BucketSort extends AbstractSort {
 
     @Override
     public void sort() {
-        System.out.println(Arrays.toString(super.getArray()));
-        traceList(super.getList());
+        System.out.println(Arrays.toString(super.getArray())); // null
+        traceList(super.getList()); // null
         bucketSort();
     }
 
@@ -59,14 +61,12 @@ public class BucketSort extends AbstractSort {
         }
 
         InsertionSort iS = new InsertionSort();
-        for (int i = 0; i < buckets.size(); i++) {
-            iS.insertionSort(buckets.get(i));
+        for (List<Integer> bucket : buckets) {
+            iS.insertionSort(bucket);
         }
 
-        for (int j = 0; j < buckets.size(); j++) {
-            for (int k : buckets.get(j)) {
-                result.add(k);
-            }
+        for (List<Integer> bucket : buckets) {
+            result.addAll(bucket);
         }
     }
 
