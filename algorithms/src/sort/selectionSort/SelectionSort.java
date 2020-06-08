@@ -1,6 +1,6 @@
-package sort.selectionSort;
+package src.sort.selectionSort;
 
-import utils.Tools;
+import src.utils.Tools;
 
 public class SelectionSort {
     /**

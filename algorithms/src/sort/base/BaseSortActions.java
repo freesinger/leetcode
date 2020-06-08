@@ -1,4 +1,4 @@
-package sort.base;
+package src.sort.base;
 
 import lombok.Data;
 

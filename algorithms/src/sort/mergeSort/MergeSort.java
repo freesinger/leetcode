@@ -1,6 +1,6 @@
-package sort.mergeSort;
+package src.sort.mergeSort;
 
-import utils.Tools;
+import src.utils.Tools;
 
 public class MergeSort {
 //    private int[] array;

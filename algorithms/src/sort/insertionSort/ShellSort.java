@@ -1,6 +1,6 @@
-package sort.insertionSort;
+package src.sort.insertionSort;
 
-import utils.Tools;
+import src.utils.Tools;
 
 public class ShellSort {
     /**

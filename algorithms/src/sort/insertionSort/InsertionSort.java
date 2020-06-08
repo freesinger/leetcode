@@ -1,11 +1,11 @@
-package sort.insertionSort;
+package src.sort.insertionSort;
 
-import utils.Tools;
+import src.utils.Tools;
 
 import java.util.List;
 
-import static utils.Tools.intArrayToList;
-import static utils.Tools.traceArray;
+import static src.utils.Tools.intArrayToList;
+import static src.utils.Tools.traceArray;
 
 public class InsertionSort {
     /**
@@ -17,7 +17,7 @@ public class InsertionSort {
      *
      * @param A
      */
-    private void insertionSort(int[] A) {
+    public void insertionSort(int[] A) {
         for (int i = 1; i < A.length; i++) {
             int cur = A[i];
             int j = i-1;
@@ -30,7 +30,7 @@ public class InsertionSort {
         }
     }
 
-    private void insertionSort(List<Integer> list) {
+    public void insertionSort(List<Integer> list) {
             for (int i = 1; i < list.size(); i++) {
                 int cur = list.get(i);
                 int j = i-1;

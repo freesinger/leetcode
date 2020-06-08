@@ -1,6 +1,6 @@
-package sort.exchangeSort;
+package src.sort.exchangeSort;
 
-import utils.Tools;
+import src.utils.Tools;
 
 public class BubbleSort {
     /**
