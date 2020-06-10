@@ -1,9 +1,23 @@
 package src.backtrack;
 
+
+import src.backtrack.base.BackTrackInterface;
+import src.backtrack.base.BaseBackTrack;
+import src.utils.Tools;
+
 import java.util.LinkedList;
 import java.util.List;
 
-class SubSets {
+class SubSets extends BaseBackTrack implements BackTrackInterface {
+    private int[] nums;
+
+    public SubSets() {
+    }
+
+    public SubSets(int[] nums) {
+        this.nums = nums;
+    }
+
     public static List<List<Integer>> subsets(int[] nums) {
         if (nums.length == 0) return null;
         List<List<Integer>> results = new LinkedList<>();
@@ -13,6 +27,7 @@ class SubSets {
 
     /**
      * 回溯法求所有子集
+     *
      * @param nums
      * @param start
      * @param track
@@ -23,12 +38,19 @@ class SubSets {
         res.add(new LinkedList<>(track)); // res.add(track); 全为[]
         for (int i = start; i < nums.length; i++) {
             track.add(nums[i]);
-            backTrack(nums, i+1, track, res);
+            backTrack(nums, i + 1, track, res);
             track.removeLast();
         }
     }
 
+
+    @Override
+    public void backTrack() {
+        List<List<Integer>> res = subsets(nums);
+        for (List<Integer> l : res) Tools.traceList(l);
+    }
+
     public static void main(String[] args) {
-        subsets(new int[] {1, 2, 3});
+        new SubSets(new int[]{1, 3, 2, 4}).backTrack();
     }
 }

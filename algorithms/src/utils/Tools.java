@@ -73,4 +73,14 @@ public class Tools {
         for (char ch : charArray) characterList.add(ch);
         return characterList;
     }
+
+    public static int factorial(int num) {
+        if (num < 0) throw new ArithmeticException("Illegal number < 0!");
+        int res = 1;
+        while (num > 1) {
+            res *= num;
+            num--;
+        }
+        return num == 0 ? 0 : res;
+    }
 }
