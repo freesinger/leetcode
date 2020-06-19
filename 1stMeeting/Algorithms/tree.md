@@ -1,0 +1,1 @@
+- 红黑树 [Def](https://zhuanlan.zhihu.com/p/79980618), [Visualize](cs.usfca.edu/~galles/visualization/RedBlack.html)

@@ -7,10 +7,10 @@ public class Node {
     public static final String RED = "red";
     public static final String BlACK = "black";
 
-    private Integer value;
-    private String color;
-    private Node left;
-    private Node right;
+    public Integer value;
+    public String color;
+    public Node left;
+    public Node right;
 
     /**
      * 通用rbtree node
@@ -28,7 +28,7 @@ public class Node {
     }
 
     /**
-     * Root
+     * 单个node
      *
      * @param value
      * @param color

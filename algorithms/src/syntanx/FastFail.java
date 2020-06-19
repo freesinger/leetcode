@@ -17,6 +17,7 @@ public class FastFail {
     }
 
     /**
+     * ref: https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/collection/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98.md#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast
      * ref: https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/
      * @param list
      */
