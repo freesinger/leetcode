@@ -9,7 +9,7 @@ class Solution {
     public String replaceSpace(StringBuffer str) {
         int ptr = str.length()-1;
         for (int i = 0; i <= ptr; i++) {
-            if (str.charAt(i) == ' ') str.append("  ");
+            if (str.charAt(i) == ' ') str.append("   ");
         }
 
         int ptr2 = str.length()-1;
