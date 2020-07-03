@@ -1,0 +1,5 @@
+# HTTP
+- [http报文结构](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md#%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87)，[头部有哪些字段](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md#%E5%9B%9Bhttp-%E9%A6%96%E9%83%A8)
+- [输入一个url到显示主页的过程](https://snailclimb.gitee.io/javaguide/#/docs/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C?id=%e4%ba%94-%e5%9c%a8%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%ad%e8%be%93%e5%85%a5url%e5%9c%b0%e5%9d%80-gtgt-%e6%98%be%e7%a4%ba%e4%b8%bb%e9%a1%b5%e7%9a%84%e8%bf%87%e7%a8%8b%e9%9d%a2%e8%af%95%e5%b8%b8%e5%ae%a2), [详细解释](https://segmentfault.com/a/1190000006879700)
+- [GET 和 POST 比较](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md#%E4%B9%9Dget-%E5%92%8C-post-%E6%AF%94%E8%BE%83)
+- [http和https](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md#%E5%85%ADhttps)
