@@ -5,6 +5,8 @@ import java.util.Date;
 public class MyRunnable implements Runnable {
     private String command;
 
+    public MyRunnable() {}
+
     public MyRunnable(String s) {
         this.command = s;
     }
