@@ -1,4 +1,4 @@
-package src.backtrack.base;
+package src.backtrack.basebacktrack;
 
 import lombok.Data;
 

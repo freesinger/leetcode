@@ -1,10 +1,10 @@
 package src.tree.redblacktree;
 
-import src.tree.base.Node;
+import src.utils.node.implement.TreeNode;
 
 public class RedBlackTree {
     public static void main(String[] args) {
-        Node root = new Node(38, Node.BlACK);
+        TreeNode root = new TreeNode(38, TreeNode.BlACK);
         // TODO: Initial tree
     }
 
@@ -12,25 +12,25 @@ public class RedBlackTree {
      * 在叶子结点的黑色父节点处进行插入
      *
      * @param node
-     * @param newNodeVal
+     * @param newTreeNodeVal
      */
-    public void commonInsert(Node node, Integer newNodeVal) {
-        if (node == null) node = new Node(newNodeVal, Node.BlACK);
+    public void commonInsert(TreeNode node, Integer newTreeNodeVal) {
+        if (node == null) node = new TreeNode(newTreeNodeVal, TreeNode.BlACK);
 
         while (true) {
-            if (node.value > newNodeVal) {
+            if (node.value > newTreeNodeVal) {
                 if (node.left == null) {
-                    if (node.color == Node.BlACK) {
-                        node.left = new Node(newNodeVal, Node.RED);
+                    if (node.color == TreeNode.BlACK) {
+                        node.left = new TreeNode(newTreeNodeVal, TreeNode.RED);
                         break;
                     }
                 }
                 node = node.left;
             } else {
-                if (node.value < newNodeVal) {
+                if (node.value < newTreeNodeVal) {
                     if (node.right == null) {
-                        if (node.color == Node.BlACK) {
-                            node.right = new Node(newNodeVal, Node.RED);
+                        if (node.color == TreeNode.BlACK) {
+                            node.right = new TreeNode(newTreeNodeVal, TreeNode.RED);
                             break;
                         }
                     }

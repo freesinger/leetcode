@@ -1,8 +1,8 @@
 package src.sort.distributionSort;
 
 
-import src.sort.base.AbstractSort;
-import src.sort.base.Sorts;
+import src.sort.basesort.AbstractSort;
+import src.sort.basesort.Sorts;
 import src.sort.insertionSort.InsertionSort;
 
 import java.util.ArrayList;
@@ -42,8 +42,8 @@ public class BucketSort extends AbstractSort implements Sorts {
 
     @Override
     public void sort() {
-        System.out.println(Arrays.toString(super.getArray())); // null
-        traceList(super.getList()); // null
+        // System.out.println(Arrays.toString(super.getArray())); // null
+        // traceList(super.getList()); // null
         bucketSort();
     }
 

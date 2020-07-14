@@ -2,6 +2,7 @@ package src.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import src.utils.node.implement.ListNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,5 +83,13 @@ public class Tools {
             num--;
         }
         return num == 0 ? 0 : res;
+    }
+
+    public static void traceListNode(ListNode node) {
+        if (node == null) return;
+        while (node != null) {
+            System.out.println(node.value);
+            node = node.next;
+        }
     }
 }

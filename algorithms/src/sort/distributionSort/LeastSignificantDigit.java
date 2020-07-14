@@ -1,7 +1,7 @@
 package src.sort.distributionSort;
 
-import src.sort.base.AbstractSort;
-import src.sort.base.Sorts;
+import src.sort.basesort.AbstractSort;
+import src.sort.basesort.Sorts;
 
 import java.util.List;
 

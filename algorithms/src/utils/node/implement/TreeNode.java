@@ -1,16 +1,16 @@
-package src.tree.base;
+package src.utils.node.implement;
 
-import lombok.Data;
+import src.utils.node.absnode.Node;
 
-@Data
-public class Node {
+
+public class TreeNode extends Node {
     public static final String RED = "red";
     public static final String BlACK = "black";
 
     public Integer value;
     public String color;
-    public Node left;
-    public Node right;
+    public TreeNode left;
+    public TreeNode right;
 
     /**
      * 通用rbtree node
@@ -20,7 +20,7 @@ public class Node {
      * @param left
      * @param right
      */
-    public Node(Integer value, String color, Node left, Node right) {
+    public TreeNode(Integer value, String color, TreeNode left, TreeNode right) {
         this.value = value;
         this.color = color;
         this.left = left;
@@ -33,7 +33,7 @@ public class Node {
      * @param value
      * @param color
      */
-    public Node(Integer value, String color) {
+    public TreeNode(Integer value, String color) {
         this.value = value;
         this.color = color;
     }
@@ -45,7 +45,7 @@ public class Node {
      * @param left
      * @param right
      */
-    public Node(Integer value, Node left, Node right) {
+    public TreeNode(Integer value, TreeNode left, TreeNode right) {
         this.value = value;
         this.left = left;
         this.right = right;

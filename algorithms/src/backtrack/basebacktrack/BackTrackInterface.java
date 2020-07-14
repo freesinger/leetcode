@@ -1,4 +1,4 @@
-package src.backtrack.base;
+package src.backtrack.basebacktrack;
 
 public interface BackTrackInterface {
     void backTrack();

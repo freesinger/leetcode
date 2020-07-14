@@ -1,8 +1,8 @@
 package src.backtrack;
 
 
-import src.backtrack.base.BackTrackInterface;
-import src.backtrack.base.BaseBackTrack;
+import src.backtrack.basebacktrack.BackTrackInterface;
+import src.backtrack.basebacktrack.BaseBackTrack;
 import src.utils.Tools;
 
 import java.util.LinkedList;
