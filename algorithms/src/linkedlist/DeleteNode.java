@@ -3,7 +3,9 @@ package src.linkedlist;
 import src.utils.node.implement.ListNode;
 import src.utils.Tools;
 
-
+/**
+ * 考虑两种情况
+ */
 public class DeleteNode {
     public ListNode delete(ListNode head, ListNode node) {
         if (node.next != null) {

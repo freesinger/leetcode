@@ -5,6 +5,9 @@ import src.utils.node.implement.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 判断一棵树是否对称
+ */
 public class IsSymmetryTree {
     boolean isSymmetrical(TreeNode pRoot) {
         if (pRoot == null) return false;
