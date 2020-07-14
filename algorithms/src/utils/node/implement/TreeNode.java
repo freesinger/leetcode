@@ -6,11 +6,11 @@ import src.utils.node.absnode.Node;
 public class TreeNode extends Node {
     public static final String RED = "red";
     public static final String BlACK = "black";
-
-    public Integer value;
+    
+    public int value;
     public String color;
-    public TreeNode left;
-    public TreeNode right;
+    public TreeNode left = null;
+    public TreeNode right = null;
 
     /**
      * 通用rbtree node
@@ -20,7 +20,7 @@ public class TreeNode extends Node {
      * @param left
      * @param right
      */
-    public TreeNode(Integer value, String color, TreeNode left, TreeNode right) {
+    public TreeNode(int value, String color, TreeNode left, TreeNode right) {
         this.value = value;
         this.color = color;
         this.left = left;
@@ -33,7 +33,7 @@ public class TreeNode extends Node {
      * @param value
      * @param color
      */
-    public TreeNode(Integer value, String color) {
+    public TreeNode(int value, String color) {
         this.value = value;
         this.color = color;
     }
@@ -45,7 +45,7 @@ public class TreeNode extends Node {
      * @param left
      * @param right
      */
-    public TreeNode(Integer value, TreeNode left, TreeNode right) {
+    public TreeNode(int value, TreeNode left, TreeNode right) {
         this.value = value;
         this.left = left;
         this.right = right;
