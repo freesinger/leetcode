@@ -1,3 +1,5 @@
+package src.sword;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +37,7 @@ import java.util.List;
  */
 
 // @lc code=start
-class Solution {
+class DuplicateData {
     /**
      * 值和下标对应取相反数做判断
      * 

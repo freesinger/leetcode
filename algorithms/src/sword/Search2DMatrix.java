@@ -1,3 +1,5 @@
+package src.sword;
+
 /*
  * @lc app=leetcode.cn id=240 lang=java
  *
@@ -40,7 +42,7 @@
  */
 
 // @lc code=start
-class Solution {
+class Search2DMatrix {
     /**
      * 利用单调性，不同时递增（减)降低复杂度
      * 

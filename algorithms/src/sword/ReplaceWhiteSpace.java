@@ -1,8 +1,10 @@
+package src.sword;
+
 /**
  * 将一个字符串中的空格替换成 "%20"。
  */
 
-class Solution {
+class ReplaceWhiteSpace {
     /**
      * 遍历添加所需长度，双指针反向填充
      */
