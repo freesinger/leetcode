@@ -1,4 +1,4 @@
-package src.syntanx;
+package syntanx;
 
 import java.util.ArrayList;
 import java.util.Iterator;
