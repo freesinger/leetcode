@@ -83,8 +83,7 @@ class LRUCache {
                 queue.remove(key);
                 queue.offer(key);
             } else {
-                map.remove(queue.element());
-                queue.poll();
+                map.remove(queue.poll());
                 map.put(key, value);
                 queue.offer(key);
             }

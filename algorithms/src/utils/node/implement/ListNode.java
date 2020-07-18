@@ -1,7 +1,7 @@
 package src.utils.node.implement;
 
 import lombok.Data;
-import src.utils.node.absnode.Node;
+import src.utils.node.basenode.Node;
 
 @Data
 public

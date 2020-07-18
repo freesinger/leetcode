@@ -1,6 +1,6 @@
 package src.utils.node.implement;
 
-import src.utils.node.absnode.Node;
+import src.utils.node.basenode.Node;
 
 
 public class TreeNode extends Node {

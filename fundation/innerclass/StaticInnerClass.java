@@ -9,7 +9,7 @@ public class StaticInnerClass {
      * 静态内部类中可以定义静态或者非静态的成员
      */
     static class Inner {
-        static int inner_i = 100;
+        private static int inner_i = 100;
         static int i = 2;
         int innerJ = 200;
 
