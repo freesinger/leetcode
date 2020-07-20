@@ -1,8 +1,8 @@
-package src.sort.basesort;
+package src.sort.sortbean;
 
 import java.util.List;
 
-public abstract class AbstractSort extends BaseSortActions {
+public abstract class AbstractSort extends SortActions {
     private int[] array;
     private List<Integer> list;
 

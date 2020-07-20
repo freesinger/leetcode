@@ -1,4 +1,4 @@
-package src.sort.basesort;
+package src.sort.sortbean;
 
 import java.util.List;
 

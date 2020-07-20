@@ -50,4 +50,13 @@ public class TreeNode extends Node {
         this.left = left;
         this.right = right;
     }
+
+    /**
+     * root
+     *
+     * @param value
+     */
+    public TreeNode(int value) {
+        this.value = value;
+    }
 }

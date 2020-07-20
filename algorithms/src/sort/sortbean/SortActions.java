@@ -1,4 +1,4 @@
-package src.sort.basesort;
+package src.sort.sortbean;
 
 import lombok.Data;
 import org.slf4j.Logger;
@@ -8,21 +8,21 @@ import java.util.HashMap;
 import java.util.List;
 
 @Data
-public class BaseSortActions {
+public class SortActions {
     private int[] array;
     private List<Integer> list;
 
     public static final int TEN = 10;
 
-    protected static Logger logger = LoggerFactory.getLogger(BaseSortActions.class);
+    protected static Logger logger = LoggerFactory.getLogger(SortActions.class);
 
-    public BaseSortActions() {};
+    public SortActions() {};
 
-    public BaseSortActions(int[] array) {
+    public SortActions(int[] array) {
         this.array = array;
     }
 
-    public BaseSortActions(List<Integer> list) {
+    public SortActions(List<Integer> list) {
         this.list = list;
     }
 

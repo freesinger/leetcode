@@ -1,12 +1,11 @@
 package src.sort.distributionSort;
 
 
-import src.sort.basesort.AbstractSort;
-import src.sort.basesort.Sorts;
+import src.sort.sortbean.AbstractSort;
+import src.sort.sortbean.Sorts;
 import src.sort.insertionSort.InsertionSort;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static src.utils.Tools.intArrayToList;
