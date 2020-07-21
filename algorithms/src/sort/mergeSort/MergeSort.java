@@ -50,9 +50,9 @@ public class MergeSort {
 
 
     public static void main(String[] args) {
-        int[] test = new int[] {7, 16, 14, 10, 8, 1, 3, 12};
+        int[] test = new int[]{7, 16, 14, 10, 8, 1, 3, 12};
         int[] res = new int[test.length];
-        new MergeSort().merge_sort_recursive(test, res, 0, test.length-1);
+        new MergeSort().merge_sort_recursive(test, res, 0, test.length - 1);
         Tools.traceArray(test);
     }
 

@@ -5,7 +5,7 @@ import src.utils.node.implement.TrieNode;
 /**
  * Time complexity : O(m) m: string length
  * Space complexity : O(1)
- *
+ * <p>
  * ref: https://leetcode.com/articles/implement-trie-prefix-tree/
  */
 class Trie {

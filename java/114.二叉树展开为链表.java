@@ -1,7 +1,5 @@
 import javax.swing.tree.TreeNode;
 
-import apple.laf.JRSUIUtils.Tree;
-
 /*
  * @lc app=leetcode.cn id=114 lang=java
  *
@@ -18,17 +16,17 @@ import apple.laf.JRSUIUtils.Tree;
  * Testcase Example:  '[1,2,5,3,4,null,6]'
  *
  * 给定一个二叉树，原地将它展开为链表。
- * 
+ *
  * 例如，给定二叉树
- * 
+ *
  * ⁠   1
  * ⁠  / \
  * ⁠ 2   5
  * ⁠/ \   \
  * 3   4   6
- * 
+ *
  * 将其展开为：
- * 
+ *
  * 1
  * ⁠\
  * ⁠ 2
@@ -40,17 +38,18 @@ import apple.laf.JRSUIUtils.Tree;
  * ⁠       5
  * ⁠        \
  * ⁠         6
- * 
+ *
  */
 
 // @lc code=start
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
  * }
  */
 class Solution {
@@ -61,6 +60,7 @@ class Solution {
     /**
      * 后序遍历
      * 先将左右子树处理成链表后拼接
+     *
      * @param ancestor
      */
     private void recursive(TreeNode ancestor) {
@@ -72,7 +72,7 @@ class Solution {
         TreeNode left = ancestor.left;
         ancestor.right = left;
         ancestor.left = null;
-        
+
         while (ancestor.right != null) ancestor = ancestor.right;
         ancestor.right = tmpRight;
     }

@@ -7,7 +7,8 @@ public abstract class AbstractSort extends SortActions {
     private List<Integer> list;
 
     // 有带参的构造函数时必须显式声明默认构造函数
-    protected AbstractSort() {}
+    protected AbstractSort() {
+    }
 
     public AbstractSort(int[] array) {
         this.array = array;

@@ -8,6 +8,11 @@ public class RobotPath {
     private static final int[][] pos = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
     private static int count = 0;
 
+    public static void main(String[] args) {
+        RobotPath robotPath = new RobotPath();
+        System.out.println(robotPath.movingCount(15, 20, 20));
+    }
+
     public int movingCount(int threshold, int rows, int cols) {
         boolean[][] hasReached = new boolean[rows][cols];
         dfs(hasReached, 0, 0, threshold);
@@ -25,7 +30,6 @@ public class RobotPath {
         }
     }
 
-
     public int posSum(int row, int col) {
         int sum = 0;
         while (row > 0) {
@@ -39,10 +43,5 @@ public class RobotPath {
         }
 
         return sum;
-    }
-
-    public static void main(String[] args) {
-        RobotPath robotPath = new RobotPath();
-        System.out.println(robotPath.movingCount(15, 20, 20));
     }
 }

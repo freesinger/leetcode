@@ -12,9 +12,9 @@ public class SelectionSort {
      * @param A
      */
     public static void selectionSort(int[] A) {
-        for (int i = 0; i < A.length-1; i++) {
+        for (int i = 0; i < A.length - 1; i++) {
             int minIdx = i;
-            for (int j = i+1; j < A.length; j++) {
+            for (int j = i + 1; j < A.length; j++) {
                 minIdx = A[j] < A[minIdx] ? j : minIdx;
             }
             int t = A[minIdx];
@@ -26,7 +26,7 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        int[] arrayToSort = new int[] {8, 3, 1, 5, 2, 1};
+        int[] arrayToSort = new int[]{8, 3, 1, 5, 2, 1};
         selectionSort(arrayToSort);
         return;
     }

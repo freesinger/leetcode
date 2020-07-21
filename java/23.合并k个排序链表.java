@@ -1,5 +1,3 @@
-import jdk.nashorn.internal.ir.ReturnNode;
-
 /*
  * @lc app=leetcode.cn id=23 lang=java
  *
@@ -16,9 +14,9 @@ import jdk.nashorn.internal.ir.ReturnNode;
  * Testcase Example:  '[[1,4,5],[1,3,4],[2,6]]'
  *
  * 合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
- * 
+ *
  * 示例:
- * 
+ *
  * 输入:
  * [
  * 1->4->5,
@@ -26,7 +24,7 @@ import jdk.nashorn.internal.ir.ReturnNode;
  * 2->6
  * ]
  * 输出: 1->1->2->3->4->4->5->6
- * 
+ *
  */
 
 // @lc code=start
@@ -72,7 +70,7 @@ class Solution {
         ListNode new_head = new ListNode(-1);
         ListNode tmp = new_head;
 
-        while (l.next  != null && r.next != null) {
+        while (l.next != null && r.next != null) {
             if (l.val < r.val) {
                 tmp.next = l;
                 l = l.next;

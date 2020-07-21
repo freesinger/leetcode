@@ -6,7 +6,7 @@ import src.utils.node.basenode.Node;
 public class TreeNode extends Node {
     public static final String RED = "red";
     public static final String BlACK = "black";
-    
+
     public int value;
     public String color;
     public TreeNode left = null;

@@ -9,7 +9,10 @@ public class LeastSignificantDigit extends AbstractSort implements Sorts {
     private List<Integer> list;
     private int[] array;
 
-    public LeastSignificantDigit() {};
+    public LeastSignificantDigit() {
+    }
+
+    ;
 
     public LeastSignificantDigit(List<Integer> list) {
         this.list = list;
@@ -19,6 +22,10 @@ public class LeastSignificantDigit extends AbstractSort implements Sorts {
         this.array = array;
     }
 
+    public static void main(String[] args) {
+        int[] arr = {5, 10, 0, 3, 8, 5, 1, 10, 990, 168, 254};
+        new LeastSignificantDigit(arr).sort();
+    }
 
     // 抽象类中的sort必须被实现类重写
     @Override
@@ -45,10 +52,5 @@ public class LeastSignificantDigit extends AbstractSort implements Sorts {
             count++;
         }
         return count;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {5, 10, 0, 3, 8, 5, 1, 10, 990, 168, 254};
-        new LeastSignificantDigit(arr).sort();
     }
 }

@@ -5,8 +5,8 @@ import src.utils.node.basenode.Node;
 
 @Data
 public class TrieNode extends Node {
-    private TrieNode[] links;
     private static final int R = 26;
+    private TrieNode[] links;
     private boolean isEnd;
 
     public TrieNode() {

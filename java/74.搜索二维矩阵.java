@@ -14,14 +14,14 @@
  * Testcase Example:  '[[1,3,5,7],[10,11,16,20],[23,30,34,50]]\n3'
  *
  * 编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性：
- * 
- * 
+ *
+ *
  * 每行中的整数从左到右按升序排列。
  * 每行的第一个整数大于前一行的最后一个整数。
- * 
- * 
+ *
+ *
  * 示例 1:
- * 
+ *
  * 输入:
  * matrix = [
  * ⁠ [1,   3,  5,  7],
@@ -30,10 +30,10 @@
  * ]
  * target = 3
  * 输出: true
- * 
- * 
+ *
+ *
  * 示例 2:
- * 
+ *
  * 输入:
  * matrix = [
  * ⁠ [1,   3,  5,  7],
@@ -42,7 +42,7 @@
  * ]
  * target = 13
  * 输出: false
- * 
+ *
  */
 
 // @lc code=start
@@ -50,6 +50,7 @@ class Solution {
     /**
      * 找到区间进行二分查找
      * 注意二维数组为空的情况
+     *
      * @param matrix
      * @param target
      * @return
@@ -61,7 +62,7 @@ class Solution {
 
         for (int r = 0; r < R; r++) {
             if (matrix[r].length == 0) continue;
-            if (matrix[r][0] <= target && matrix[r][C-1] >= target) {
+            if (matrix[r][0] <= target && matrix[r][C - 1] >= target) {
                 boolean exist = binarySearch(matrix[r], target);
                 if (exist) return true;
             }
@@ -72,7 +73,7 @@ class Solution {
 
     private boolean binarySearch(int[] nums, int target) {
         if (nums.length == 0) return false;
-        int left = 0, right = nums.length-1;
+        int left = 0, right = nums.length - 1;
 
         while (left <= right) {
             int mid = (left + (right - left) / 2);

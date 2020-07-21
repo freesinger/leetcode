@@ -9,14 +9,15 @@ import java.util.List;
 
 @Data
 public class SortActions {
+    public static final int TEN = 10;
+    protected static Logger logger = LoggerFactory.getLogger(SortActions.class);
     private int[] array;
     private List<Integer> list;
 
-    public static final int TEN = 10;
+    public SortActions() {
+    }
 
-    protected static Logger logger = LoggerFactory.getLogger(SortActions.class);
-
-    public SortActions() {};
+    ;
 
     public SortActions(int[] array) {
         this.array = array;
@@ -79,9 +80,12 @@ public class SortActions {
     }
 
 
-    public void sort(List<Integer> list) {}
+    public void sort(List<Integer> list) {
+    }
 
-    public void sort(int[] array) {}
+    public void sort(int[] array) {
+    }
 
-    public void sort() {}
+    public void sort() {
+    }
 }

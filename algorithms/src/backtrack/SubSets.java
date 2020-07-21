@@ -43,14 +43,13 @@ class SubSets extends BaseBackTrack implements BackTrackInterface {
         }
     }
 
+    public static void main(String[] args) {
+        new SubSets(new int[]{1, 3, 2, 4}).backTrack();
+    }
 
     @Override
     public void backTrack() {
         List<List<Integer>> res = subsets(nums);
         for (List<Integer> l : res) Tools.traceList(l);
-    }
-
-    public static void main(String[] args) {
-        new SubSets(new int[]{1, 3, 2, 4}).backTrack();
     }
 }

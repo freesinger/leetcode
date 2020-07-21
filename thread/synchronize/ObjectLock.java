@@ -14,6 +14,14 @@ public class ObjectLock {
     private static final Logger logger = LoggerFactory.getLogger(ObjectLock.class);
     private Object lock = new Object();
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            Thread worker = new Thread(new ObjectLockWorker());
+            // worker.setName("thread-" + i);
+            worker.start();
+        }
+    }
+
     // 锁对象实例里的非静态变量
     public void lockObjectField() {
         try {
@@ -66,14 +74,6 @@ public class ObjectLock {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            Thread worker = new Thread(new ObjectLockWorker());
-            // worker.setName("thread-" + i);
-            worker.start();
         }
     }
 }

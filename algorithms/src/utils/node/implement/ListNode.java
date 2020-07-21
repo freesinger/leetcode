@@ -9,7 +9,8 @@ class ListNode extends Node {
     public int value;
     public ListNode next;
 
-    public ListNode() {}
+    public ListNode() {
+    }
 
     public ListNode(int value) {
         this.value = value;

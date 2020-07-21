@@ -7,8 +7,8 @@ package jvm;
  */
 public class ClassLoaderDemo {
     public static void main(String[] args) {
-        System.out.println("ClassLoaderDemo's classloader is: "+ClassLoaderDemo.class.getClassLoader());
-        System.out.println("Parent classloader is: "+ClassLoaderDemo.class.getClassLoader().getParent());
-        System.out.println("GrandPa classloader is: "+ClassLoaderDemo.class.getClassLoader().getParent().getParent());
+        System.out.println("ClassLoaderDemo's classloader is: " + ClassLoaderDemo.class.getClassLoader());
+        System.out.println("Parent classloader is: " + ClassLoaderDemo.class.getClassLoader().getParent());
+        System.out.println("GrandPa classloader is: " + ClassLoaderDemo.class.getClassLoader().getParent().getParent());
     }
 }

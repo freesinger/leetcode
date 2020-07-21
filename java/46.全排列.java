@@ -17,9 +17,9 @@ import java.util.List;
  * Testcase Example:  '[1,2,3]'
  *
  * 给定一个没有重复数字的序列，返回其所有可能的全排列。
- * 
+ *
  * 示例:
- * 
+ *
  * 输入: [1,2,3]
  * 输出:
  * [
@@ -30,7 +30,7 @@ import java.util.List;
  * ⁠ [3,1,2],
  * ⁠ [3,2,1]
  * ]
- * 
+ *
  */
 
 // @lc code=start
@@ -38,7 +38,7 @@ class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         boolean[] exist = new boolean[nums.length];
-        
+
         backTrack(res, new ArrayList<>(), exist, nums);
 
         return res;
@@ -46,6 +46,7 @@ class Solution {
 
     /**
      * 回溯法
+     *
      * @param list
      * @param perm
      * @param exist
@@ -63,7 +64,7 @@ class Solution {
                 backTrack(list, perm, exist, nums);
                 // 还原状态
                 exist[i] = false;
-                perm.remove(perm.size()-1);
+                perm.remove(perm.size() - 1);
             }
         }
     }

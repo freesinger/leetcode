@@ -1,6 +1,7 @@
 package innerclass;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class AnonymousInnerClass {
     public static void main(String[] args) {

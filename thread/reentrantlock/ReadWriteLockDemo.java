@@ -1,7 +1,5 @@
 package reentrantlock;
 
-import sun.jvm.hotspot.oops.ObjectHeap;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -11,6 +9,34 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class ReadWriteLockDemo {
     private Map<String, Object> map = new HashMap<>();
     private ReadWriteLock lock = new ReentrantReadWriteLock();
+
+    public static void main(String[] args) {
+        final ReadWriteLockDemo test = new ReadWriteLockDemo();
+        final String key = "anran";
+        final Random seed = new Random();
+
+        // 单线程
+//        new Thread(() -> System.out.println(Thread.currentThread().getName() + " get value: " + test.getValue(key))).start();
+
+        // 多线程
+        for (int i = 0; i < 3; i++) {
+            new Thread(() -> {
+                for (int j = 0; j < 5; j++) {
+                    System.out.println(Thread.currentThread().getName() + " read value: " + test.get(key));
+                }
+            }).start();
+
+            new Thread(() -> {
+                for (int j = 0; j < 6; j++) {
+                    int value = seed.nextInt(1000);
+                    test.set(key, value);
+                    System.out.println(Thread.currentThread().getName() + " write value: " + value);
+                }
+            }).start();
+        }
+
+
+    }
 
     /**
      * 单线程读写锁
@@ -64,7 +90,6 @@ public class ReadWriteLockDemo {
         return value;
     }
 
-
     /**
      * Set
      *
@@ -81,33 +106,5 @@ public class ReadWriteLockDemo {
         } finally {
             lock.writeLock().unlock();
         }
-    }
-
-    public static void main(String[] args) {
-        final ReadWriteLockDemo test = new ReadWriteLockDemo();
-        final String key = "anran";
-        final Random seed = new Random();
-
-        // 单线程
-//        new Thread(() -> System.out.println(Thread.currentThread().getName() + " get value: " + test.getValue(key))).start();
-
-        // 多线程
-        for (int i = 0; i < 3; i++) {
-            new Thread(() -> {
-                for (int j = 0; j < 5; j++) {
-                    System.out.println(Thread.currentThread().getName() + " read value: " + test.get(key));
-                }
-            }).start();
-
-            new Thread(() -> {
-                for (int j = 0; j < 6; j++) {
-                    int value = seed.nextInt(1000);
-                    test.set(key, value);
-                    System.out.println(Thread.currentThread().getName() + " write value: " + value);
-                }
-            }).start();
-        }
-
-
     }
 }

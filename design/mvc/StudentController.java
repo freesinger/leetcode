@@ -9,20 +9,20 @@ public class StudentController {
         this.view = view;
     }
 
-    public void setStudentName(String name) {
-        model.setName(name);
-    }
-
     public String getStudentName() {
         return model.getName();
     }
 
-    public void setStudentId(String id) {
-        model.setIdNo(id);
+    public void setStudentName(String name) {
+        model.setName(name);
     }
 
     public String getStudentId() {
         return model.getIdNo();
+    }
+
+    public void setStudentId(String id) {
+        model.setIdNo(id);
     }
 
     public void updateView() {

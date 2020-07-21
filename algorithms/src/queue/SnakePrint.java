@@ -11,6 +11,19 @@ import java.util.Queue;
  * 之字打印
  */
 public class SnakePrint {
+    public static void main(String[] args) {
+        SnakePrint test = new SnakePrint();
+        TreeNode root = new TreeNode(1);
+        TreeNode node1 = new TreeNode(2);
+        TreeNode node2 = new TreeNode(3);
+        TreeNode node3 = new TreeNode(4);
+        root.left = node1;
+        root.right = node2;
+        node2.left = node3;
+
+        System.out.println(test.Print(root));
+    }
+
     public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         if (pRoot == null) return new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
@@ -34,18 +47,5 @@ public class SnakePrint {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        SnakePrint test = new SnakePrint();
-        TreeNode root = new TreeNode(1);
-        TreeNode node1 = new TreeNode(2);
-        TreeNode node2 = new TreeNode(3);
-        TreeNode node3 = new TreeNode(4);
-        root.left = node1;
-        root.right = node2;
-        node2.left = node3;
-
-        System.out.println(test.Print(root));
     }
 }

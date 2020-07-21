@@ -17,7 +17,7 @@ class Solution {
             } else if (s.charAt(i) == ')') {
                 StringBuilder stringBuilder = new StringBuilder(stack.pop());
                 // String reverseTop = reverseString(stack.pop());
-                stack.push(stack.pop() + stringBuilder.reverse());  
+                stack.push(stack.pop() + stringBuilder.reverse());
             } else {
                 String top = stack.pop();
                 stack.push(top + s.charAt(i));

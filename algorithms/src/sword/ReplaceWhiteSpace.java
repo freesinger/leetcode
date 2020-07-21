@@ -9,12 +9,12 @@ class ReplaceWhiteSpace {
      * 遍历添加所需长度，双指针反向填充
      */
     public String replaceSpace(StringBuffer str) {
-        int ptr = str.length()-1;
+        int ptr = str.length() - 1;
         for (int i = 0; i <= ptr; i++) {
             if (str.charAt(i) == ' ') str.append("   ");
         }
 
-        int ptr2 = str.length()-1;
+        int ptr2 = str.length() - 1;
         while (ptr2 > ptr && ptr >= 0) {
             if (str.charAt(ptr) == ' ') {
                 str.setCharAt(ptr2--, '0');

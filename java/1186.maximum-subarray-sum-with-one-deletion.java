@@ -14,7 +14,7 @@ class Solution {
 
         f[0] = arr[0];
         g[0] = Integer.MIN_VALUE;
-        
+
         for (int i = 1; i < n; i++) {
             f[i] = Math.max(f[i - 1] + arr[i], arr[i]);
             g[i] = Math.max(g[i - 1] + arr[i], f[i - 1]);

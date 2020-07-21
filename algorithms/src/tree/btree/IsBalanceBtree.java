@@ -5,6 +5,12 @@ import src.utils.node.implement.TreeNode;
 public class IsBalanceBtree {
     private static boolean isBalanced = true;
 
+    public static void main(String[] args) {
+        IsBalanceBtree test = new IsBalanceBtree();
+        TreeNode root = new TreeNode(1);
+        System.out.println(test.isBalanceBinaryTree(root));
+    }
+
     public boolean isBalanceBinaryTree(TreeNode root) {
         if (root == null) return false;
         depth(root);
@@ -21,11 +27,5 @@ public class IsBalanceBtree {
 
     private boolean hasChild(TreeNode node) {
         return node.left != null || node.right != null;
-    }
-
-    public static void main(String[] args) {
-        IsBalanceBtree test = new IsBalanceBtree();
-        TreeNode root = new TreeNode(1);
-        System.out.println(test.isBalanceBinaryTree(root));
     }
 }

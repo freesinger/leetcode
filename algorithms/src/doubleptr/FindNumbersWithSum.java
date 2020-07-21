@@ -10,7 +10,7 @@ public class FindNumbersWithSum {
     public ArrayList<Integer> findNumbersWithSum(int[] array, int sum) {
 //        Arrays.sort(array);
 
-        int left = 0, right = array.length-1;
+        int left = 0, right = array.length - 1;
         while (left < right) {
             int curSum = array[left] + array[right];
             if (curSum < sum) {

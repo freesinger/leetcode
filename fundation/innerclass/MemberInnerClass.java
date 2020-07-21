@@ -6,6 +6,46 @@ public class MemberInnerClass {
     private int k = 20;
 
     /**
+     * 成员内部类可以访问外部类静态方法
+     */
+    public static void outerF1() {
+    }
+
+    /**
+     * 外部类的静态方法访问成员内部类，与在外部类外部访问成员内部类一样
+     */
+    public static void outerF4() {
+        //step1 建立外部类对象
+        MemberInnerClass out = new MemberInnerClass();
+        //step2 根据外部类对象建立内部类对象
+        Inner inner = out.new Inner(666, 888);
+        //step3 访问内部类的方法
+        inner.innerF1();
+    }
+
+    public static void main(String[] args) {
+        MemberInnerClass out = new MemberInnerClass();
+        out.outerF3();
+        MemberInnerClass.outerF4();
+        MemberInnerClass.Inner outin = out.new Inner();
+        outin.innerF1();
+    }
+
+    /**
+     * 成员变量可以访问外部类非静态方法
+     */
+    public void outerF2() {
+    }
+
+    /**
+     * 外部类的非静态方法访问成员内部类
+     */
+    public void outerF3() {
+        Inner inner = new Inner();
+        inner.innerF1();
+    }
+
+    /**
      * 成员内部类中，不能定义静态成员
      * 成员内部类中，可以访问外部类的所有成员
      */
@@ -16,7 +56,8 @@ public class MemberInnerClass {
         int i = 999;
         // static int innerI = 1;
 
-        Inner() {}
+        Inner() {
+        }
 
         Inner(int j, int i) {
             this.j = j;
@@ -40,45 +81,5 @@ public class MemberInnerClass {
             outerF2();
             System.out.println();
         }
-    }
-
-    /**
-     * 成员内部类可以访问外部类静态方法
-     */
-    public static void outerF1() {
-    }
-
-    /**
-     * 成员变量可以访问外部类非静态方法
-     */
-    public void outerF2() {
-    }
-
-    /**
-     * 外部类的非静态方法访问成员内部类
-     */
-    public void outerF3() {
-        Inner inner = new Inner();
-        inner.innerF1();
-    }
-
-    /**
-     * 外部类的静态方法访问成员内部类，与在外部类外部访问成员内部类一样
-     */
-    public static void outerF4() {
-        //step1 建立外部类对象
-        MemberInnerClass out = new MemberInnerClass();
-        //step2 根据外部类对象建立内部类对象
-        Inner inner = out.new Inner(666, 888);
-        //step3 访问内部类的方法
-        inner.innerF1();
-    }
-
-    public static void main(String[] args) {
-        MemberInnerClass out = new MemberInnerClass();
-        out.outerF3();
-        MemberInnerClass.outerF4();
-        MemberInnerClass.Inner outin = out.new Inner();
-        outin.innerF1();
     }
 }

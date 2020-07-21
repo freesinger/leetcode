@@ -1,6 +1,5 @@
-import java.util.List;
-
 import javax.swing.tree.TreeNode;
+import java.util.List;
 
 /*
  * @lc app=leetcode.cn id=145 lang=java
@@ -18,30 +17,31 @@ import javax.swing.tree.TreeNode;
  * Testcase Example:  '[1,null,2,3]'
  *
  * 给定一个二叉树，返回它的 后序 遍历。
- * 
+ *
  * 示例:
- * 
- * 输入: [1,null,2,3]  
+ *
+ * 输入: [1,null,2,3]
  * ⁠  1
  * ⁠   \
  * ⁠    2
  * ⁠   /
- * ⁠  3 
- * 
+ * ⁠  3
+ *
  * 输出: [3,2,1]
- * 
+ *
  * 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
- * 
+ *
  */
 
 // @lc code=start
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
  * }
  */
 class Solution {

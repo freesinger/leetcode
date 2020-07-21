@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class FindPath {
     ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
         if (root == null) return result;
         recursive(root, 0, target, new ArrayList<>());

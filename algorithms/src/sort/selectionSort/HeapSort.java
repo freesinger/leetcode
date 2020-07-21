@@ -14,8 +14,15 @@ import java.util.Arrays;
  */
 public class HeapSort {
     private int[] array;
+
     public HeapSort(int[] array) {
         this.array = array;
+    }
+
+    public static void main(String[] args) {
+        final int[] test = new int[]{7, 16, 14, 10, 8, 1, 3, 12};
+        new HeapSort(test).heapSort();
+        System.out.println(Arrays.toString(test));
     }
 
     private void buildMaxHeap() {
@@ -24,8 +31,8 @@ public class HeapSort {
 
     private void heapify(int heapSize, int curId) {
         int largest = curId;
-        int left = 2*curId+1;
-        int right = 2*curId+2;
+        int left = 2 * curId + 1;
+        int right = 2 * curId + 2;
 
         largest = (left < heapSize && array[left] > array[largest]) ? left : largest;
         largest = (right < heapSize && array[right] > array[largest]) ? right : largest;
@@ -41,18 +48,12 @@ public class HeapSort {
         buildMaxHeap();
         Tools.traceArray(array);
         int heapSize = array.length;
-        for (int i = heapSize-1; i >= 0; i--) {
+        for (int i = heapSize - 1; i >= 0; i--) {
             Tools.swapByIndex(array, i, 0);
             Tools.traceArray(array);
             heapSize--;
             heapify(heapSize, 0);
             Tools.traceArray(array);
         }
-    }
-
-    public static void main(String[] args) {
-        final int[] test = new int[] {7, 16, 14, 10, 8, 1, 3, 12};
-        new HeapSort(test).heapSort();
-        System.out.println(Arrays.toString(test));
     }
 }

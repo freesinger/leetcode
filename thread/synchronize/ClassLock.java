@@ -9,6 +9,19 @@ import lombok.Data;
 public class ClassLock {
     private static Object lock = new Object();
 
+    // 锁静态方法
+    public static synchronized void lockMethod() throws InterruptedException {
+        System.out.println(Thread.currentThread().getName());
+        Thread.sleep(3000);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            Thread worker = new Thread(new ClassLockWorker());
+            worker.start();
+        }
+    }
+
     // 锁类中的静态变量
     public void lockStaticObjectField() {
         try {
@@ -19,12 +32,6 @@ public class ClassLock {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    // 锁静态方法
-    public static synchronized void lockMethod() throws InterruptedException {
-        System.out.println(Thread.currentThread().getName());
-        Thread.sleep(3000);
     }
 
     // 锁当前类的.class属性
@@ -54,13 +61,6 @@ public class ClassLock {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            Thread worker = new Thread(new ClassLockWorker());
-            worker.start();
         }
     }
 }

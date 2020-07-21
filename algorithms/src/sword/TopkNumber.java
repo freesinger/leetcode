@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 class TopKNumber {
+    public static void main(String[] args) {
+        int[] test = new int[]{4, 2, 6, 1, -2, 9, -10, 22, 7};
+        TopKNumber t = new TopKNumber();
+
+        System.out.println(t.findKthMinNumber(test, 2)); // min
+        System.out.println(t.findKthMaxNumber(test, 3).toString()); // max
+    }
+
     private int findKthMinNumber(int[] nums, int k) {
         // 最大堆找第k小数
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k, (o1, o2) -> o2 - o1);
@@ -23,6 +31,7 @@ class TopKNumber {
         return priorityQueue.peek();
     }
 
+    // TODO: 快排
 
     /**
      * 前k个数为前k大数
@@ -55,15 +64,5 @@ class TopKNumber {
         }
 
         return result;
-    }
-
-    // TODO: 快排
-
-    public static void main(String[] args) {
-        int[] test =  new int[] {4, 2, 6, 1, -2, 9, -10, 22, 7};
-        TopKNumber t = new TopKNumber();
-
-        System.out.println(t.findKthMinNumber(test, 2)); // min
-        System.out.println(t.findKthMaxNumber(test, 3).toString()); // max
     }
 }

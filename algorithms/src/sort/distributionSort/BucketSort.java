@@ -1,9 +1,9 @@
 package src.sort.distributionSort;
 
 
+import src.sort.insertionSort.InsertionSort;
 import src.sort.sortbean.AbstractSort;
 import src.sort.sortbean.Sorts;
-import src.sort.insertionSort.InsertionSort;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,10 @@ public class BucketSort extends AbstractSort implements Sorts {
     private int bucketNumber;
     private List<Integer> result;
 
-    public BucketSort() {};
+    public BucketSort() {
+    }
+
+    ;
 
     // 子类不继承父类构造器，只是显式(super)或隐式调用
     // 每一条隐式调用都省略了super()
@@ -37,6 +40,13 @@ public class BucketSort extends AbstractSort implements Sorts {
         this.list = list;
         this.bucketNumber = bucketNumber;
         this.result = result;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> arrayToSort = intArrayToList(new int[]{54, 88, 9, 2, 88, 91, 105, 18, 10});
+        List<Integer> res = new ArrayList<>();
+        new BucketSort(arrayToSort, 5, res).sort();
+        traceList(res);
     }
 
     @Override
@@ -67,12 +77,5 @@ public class BucketSort extends AbstractSort implements Sorts {
         for (List<Integer> bucket : buckets) {
             result.addAll(bucket);
         }
-    }
-
-    public static void main(String[] args) {
-        List<Integer> arrayToSort = intArrayToList(new int[]{54, 88, 9, 2, 88, 91, 105, 18, 10});
-        List<Integer> res = new ArrayList<>();
-        new BucketSort(arrayToSort, 5, res).sort();
-        traceList(res);
     }
 }

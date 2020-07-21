@@ -17,32 +17,33 @@ import java.util.Map;
  * Testcase Example:  '1\n2'
  *
  * 给定两个整数，分别表示分数的分子 numerator 和分母 denominator，以字符串形式返回小数。
- * 
+ *
  * 如果小数部分为循环小数，则将循环的部分括在括号内。
- * 
+ *
  * 示例 1:
- * 
+ *
  * 输入: numerator = 1, denominator = 2
  * 输出: "0.5"
- * 
- * 
+ *
+ *
  * 示例 2:
- * 
+ *
  * 输入: numerator = 2, denominator = 1
  * 输出: "2"
- * 
+ *
  * 示例 3:
- * 
+ *
  * 输入: numerator = 2, denominator = 3
  * 输出: "0.(6)"
- * 
- * 
+ *
+ *
  */
 
 // @lc code=start
 class Solution {
     /**
      * 长除法
+     *
      * @param numerator
      * @param denominator
      * @return
@@ -58,7 +59,7 @@ class Solution {
         long numer = Math.abs((long) numerator);
         long denom = Math.abs((long) denominator);
         Map<Long, Integer> map = new HashMap<>();
-        
+
         long remainder = numer % denom;
         dec.append(String.valueOf(numer / denom));
         dec.append(remainder == 0 ? "" : ".");
@@ -67,14 +68,14 @@ class Solution {
                 map.put(remainder, dec.length());
                 numer = 10 * remainder;
                 dec.append(String.valueOf(numer / denom));
-                remainder = numer % denom; 
+                remainder = numer % denom;
             } else {
                 dec.insert(map.get(remainder), "(");
                 dec.append(")");
                 break;
             }
         }
-                
+
         return dec.toString();
     }
 }

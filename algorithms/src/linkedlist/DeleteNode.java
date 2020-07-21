@@ -1,12 +1,25 @@
 package src.linkedlist;
 
-import src.utils.node.implement.ListNode;
 import src.utils.Tools;
+import src.utils.node.implement.ListNode;
 
 /**
  * 考虑两种情况
  */
 public class DeleteNode {
+    public static void main(String[] args) {
+        // TODO: testcase
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2, node1);
+        ListNode node3 = new ListNode(3, node2);
+        ListNode node4 = new ListNode(4, node3);
+
+        DeleteNode deleteNode = new DeleteNode();
+        deleteNode.delete(node4, node1);
+
+        Tools.traceListNode(node4);
+    }
+
     public ListNode delete(ListNode head, ListNode node) {
         if (node.next != null) {
             node.value = node.next.value;
@@ -21,19 +34,5 @@ public class DeleteNode {
             cur.next = null;
         }
         return head;
-    }
-
-
-    public static void main(String[] args) {
-        // TODO: testcase
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2, node1);
-        ListNode node3 = new ListNode(3, node2);
-        ListNode node4 = new ListNode(4, node3);
-
-        DeleteNode deleteNode = new DeleteNode();
-        deleteNode.delete(node4, node1);
-
-        Tools.traceListNode(node4);
     }
 }

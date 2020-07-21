@@ -7,7 +7,7 @@
 // @lc code=start
 class Solution {
     public int kConcatenationMaxSum(int[] arr, int k) {
-        
+
     }
 }
 // @lc code=end

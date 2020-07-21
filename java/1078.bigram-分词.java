@@ -6,9 +6,9 @@ class Solution {
         List<String> res = new ArrayList<>();
 
         String[] split = text.split(" ");
-        for (int i = 0; i < split.length-2; i++) {
-            if (split[i].equals(first) && split[i+1].equals(second)) {
-                res.add(split[i+2]);
+        for (int i = 0; i < split.length - 2; i++) {
+            if (split[i].equals(first) && split[i + 1].equals(second)) {
+                res.add(split[i + 2]);
             }
         }
 

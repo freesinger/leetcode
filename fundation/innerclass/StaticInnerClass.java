@@ -4,13 +4,33 @@ public class StaticInnerClass {
     private static int i = 1;
     private int j = 10;
 
+    public static void outerF1() {
+    }
+
+    public static void main(String[] args) {
+        new StaticInnerClass().outerF3();
+    }
+
+    public void outerF2() {
+    }
+
+    public void outerF3() {
+        // 外部类访问内部类的静态成员：内部类.静态成员
+        System.out.println(Inner.inner_i);
+        Inner.innerF1();
+        // 外部类访问内部类的非静态成员:实例化内部类即可
+        Inner inner = new Inner();
+        System.out.println(inner.innerJ);
+        inner.innerF2();
+    }
+
     /**
      * 静态内部类可以用public,protected,private修饰
      * 静态内部类中可以定义静态或者非静态的成员
      */
     static class Inner {
-        private static int inner_i = 100;
         static int i = 2;
+        private static int inner_i = 100;
         int innerJ = 200;
 
         static void innerF1() {
@@ -27,25 +47,5 @@ public class StaticInnerClass {
             System.out.println(i);
             System.out.println(innerJ);
         }
-    }
-
-    public static void outerF1() {
-    }
-
-    public void outerF2() {
-    }
-
-    public void outerF3() {
-        // 外部类访问内部类的静态成员：内部类.静态成员
-        System.out.println(Inner.inner_i);
-        Inner.innerF1();
-        // 外部类访问内部类的非静态成员:实例化内部类即可
-        Inner inner = new Inner();
-        System.out.println(inner.innerJ);
-        inner.innerF2();
-    }
-
-    public static void main(String[] args) {
-        new StaticInnerClass().outerF3();
     }
 }

@@ -19,9 +19,9 @@ class Solution {
             for (int j = 0; j < word.length(); j++) {
                 char ch = Character.toLowerCase(word.charAt(j));
                 // if (firstLine.indexOf(ch))
-                if (firstLine.contains(""+ch)) f = 1;
-                if (secondLine.contains(""+ch)) s = 1;
-                if (thirdLine.contains(""+ch)) t = 1;
+                if (firstLine.contains("" + ch)) f = 1;
+                if (secondLine.contains("" + ch)) s = 1;
+                if (thirdLine.contains("" + ch)) t = 1;
             }
             if ((f + s + t) == 1) res.add(word);
         }
