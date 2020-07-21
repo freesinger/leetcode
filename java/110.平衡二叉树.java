@@ -61,19 +61,34 @@
  * }
  */
 class Solution {
+    // public boolean isBalanced(TreeNode root) {
+    //     // Bottom-up DFS
+    //     return depth(root) != -1;
+    // }
+
+    // private int depth(TreeNode root) {
+    //     if (root == null) return 0;
+    //     int left = depth(root.left);
+    //     if (left == -1) return -1;
+    //     int right = depth(root.right);
+    //     if (right == -1) return -1;
+    //     // return level number
+    //     return Math.abs(left-right) < 2 ? Math.max(left, right) + 1 : -1;
+    // }
+
+    private boolean isBalance = true;
     public boolean isBalanced(TreeNode root) {
-        // Bottom-up DFS
-        return depth(root) != -1;
+        if (root == null) return true;
+        depth(root);
+        return isBalance;
     }
 
     private int depth(TreeNode root) {
-        if (root == null) return 0;
-        int left = depth(root.left);
-        if (left == -1) return -1;
-        int right = depth(root.right);
-        if (right == -1) return -1;
-        // return level number
-        return Math.abs(left-right) < 2 ? Math.max(left, right) + 1 : -1;
+        if (!isBalance || root == null) return 0;
+        int l = depth(root.left);
+        int r = depth(root.right);
+        if (Math.abs(l- r)>1) isBalance = false;
+        return 1+Math.max(l, r);
     }
 }
 // @lc code=end

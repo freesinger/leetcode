@@ -31,13 +31,7 @@ public class Daemon {
         System.out.println("isDaemon? = " + daemonThread.isDaemon());
         Scanner scanner = new Scanner(System.in);
         scanner.next();
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            @Override
-            public void run() {
-                System.out.println("JVM Exit!");
-            }
-        });
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> System.out.println("JVM Exit!")));
     }
-
 
 }

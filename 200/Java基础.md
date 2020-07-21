@@ -14,18 +14,18 @@ equals：只能用于判断对象是否相等，若重写过则是比较对象�
 
 3. 两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？
 
-**错**，首先hashcode在散列表如HashSet中才有用，主要是通过散列码来计算出对象在散列表中的位置，
+**错**，因为计算hashcode的算法会导致碰撞，也就是哈希冲突，导致一个hashcode会对应多个对象，所以在HashSet中对相同HashCode的对象还要调用equals判断对象是否真的相等。
 
-因为计算hashcode的算法会导致碰撞，也就是哈希冲突，导致一个hashcode会对应多个对象，所以在HashSet中对相同HashCode的对象还要调用equals判断对象是否真的相等。
+**对象hashcode不同则一定不是同一个对象，反之不一定**。故该说法错误。
 
-**对象想等则hashcode一定相等，反之不一定**。故该说法错误。
+**因此重写equals的时候一定要重写hashcode，hashCode() 的默认行为是对堆上的对象产生独特值。如果没有重写 hashCode()，则该 class 的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）**
 
 4. final static this super 关键字在 java 中有什么作用？
 
 final: 主要用来标志无法修改。
 
 - 修饰的类无法被继承，且该类中所有方法隐式声明为final方法；
-- 修饰的方法无法被override；-
+- 修饰的方法无法被override；
 - 修饰的变量是常量，基本数据类型初始化后无法再更改，引用类型无法指向其他对象。
 
 static: 
@@ -92,10 +92,12 @@ BIO：Blocking I/O，**同步阻塞I/O模式**，数据的**读写必须阻塞�
 NIO：(Non-blocking/New I/O) NIO 是一种**同步非阻塞的 I/O 模型**，提供了Channel、Selector、Buffer等抽象，支持基于面向缓冲**基于通道的I/O操作**方法。
 提供了SocketChannel和SeverSocketChannel两种不同的套接字通道实现，**支持阻塞和非阻塞模式**。根据负载和并发的情况选择NIO模式来开发。
 
-AIO：(Asynchronous I/O) AIO 是异步非阻塞的 IO 模型，基于事件和回调机制实现，也就是应用操作之后会直接返回不会阻塞。
+AIO：(Asynchronous I/O) AIO 是**异步非阻塞的 IO 模型**，基于**事件和回调**机制实现，也就是应用操作之后会直接返回不会阻塞。
 
 12. 深拷贝和浅拷贝
 
 - 浅拷贝：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝，此为浅拷贝。
 
 - 深拷贝：对基本数据类型进行值传递，对引用数据类型，创建一个新的对象，并复制其内容，此为深拷贝。
+    - Override clone()
+    - Serializable
