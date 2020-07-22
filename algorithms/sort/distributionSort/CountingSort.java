@@ -1,7 +1,7 @@
-package src.sort.distributionSort;
+package sort.distributionSort;
 
-import src.sort.sortbean.AbstractSort;
-import src.sort.sortbean.Sorts;
+import sort.sortbean.AbstractSort;
+import sort.sortbean.Sorts;
 import src.utils.Tools;
 
 /**

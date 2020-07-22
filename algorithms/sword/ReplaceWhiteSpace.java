@@ -1,4 +1,4 @@
-package src.sword;
+package sword;
 
 /**
  * 将一个字符串中的空格替换成 "%20"。

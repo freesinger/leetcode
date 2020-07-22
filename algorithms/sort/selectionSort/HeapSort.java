@@ -1,4 +1,4 @@
-package src.sort.selectionSort;
+package sort.selectionSort;
 
 import src.utils.Tools;
 

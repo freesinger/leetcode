@@ -1,4 +1,4 @@
-package src.sort.mergeSort;
+package sort.mergeSort;
 
 import src.utils.Tools;
 

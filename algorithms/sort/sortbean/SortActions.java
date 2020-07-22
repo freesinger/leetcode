@@ -1,4 +1,4 @@
-package src.sort.sortbean;
+package sort.sortbean;
 
 import lombok.Data;
 import org.slf4j.Logger;

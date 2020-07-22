@@ -1,9 +1,9 @@
-package src.sort.distributionSort;
+package sort.distributionSort;
 
 
-import src.sort.insertionSort.InsertionSort;
-import src.sort.sortbean.AbstractSort;
-import src.sort.sortbean.Sorts;
+import sort.insertionSort.InsertionSort;
+import sort.sortbean.AbstractSort;
+import sort.sortbean.Sorts;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package src.sword;
+package sword;
 
 /*
  * @lc app=leetcode.cn id=240 lang=java

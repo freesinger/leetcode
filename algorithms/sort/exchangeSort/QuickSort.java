@@ -1,4 +1,4 @@
-package src.sort.exchangeSort;
+package sort.exchangeSort;
 
 import src.utils.Tools;
 
