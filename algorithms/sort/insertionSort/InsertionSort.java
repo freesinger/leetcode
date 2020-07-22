@@ -13,8 +13,8 @@ public class InsertionSort {
         // List<Integer> list = Arrays.stream(arrayToSort).boxed().collect(Collectors.toList());
         List<Integer> list = intArrayToList(arrayToSort);
         new InsertionSort().insertionSort(arrayToSort);
+        assert list != null;
         new InsertionSort().insertionSort(list);
-        return;
     }
 
     /**

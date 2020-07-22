@@ -36,6 +36,5 @@ public class ShellSort {
     public static void main(String[] args) {
         int[] arrayToSort = new int[]{72, 66, 39, 92, 68, 29, 88, 46};
         shellSort(arrayToSort);
-        return;
     }
 }
