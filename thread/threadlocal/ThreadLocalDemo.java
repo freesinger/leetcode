@@ -5,17 +5,21 @@ public class ThreadLocalDemo {
 
     private static void incrementByThreadLocal() {
         for (int i = 0; i < 5; i++) {
-            Integer n = INTEGER_THREAD_LOCAL.get();
-            n++;
-            INTEGER_THREAD_LOCAL.set(n);
-            System.out.println(Thread.currentThread().getName() + ": ThreadLocal num = " + INTEGER_THREAD_LOCAL.get());
+            try {
+                Integer n = INTEGER_THREAD_LOCAL.get();
+                n++;
+                INTEGER_THREAD_LOCAL.set(n);
+                Thread.sleep(2000);
+                System.out.println(Thread.currentThread().getName() + ": ThreadLocal num = " + INTEGER_THREAD_LOCAL.get());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public static void main(String[] args) {
         for (int i = 0; i < 3; i++) {
-            Thread t = new Thread(ThreadLocalDemo::incrementByThreadLocal);
-            t.start();
+            new Thread(ThreadLocalDemo::incrementByThreadLocal).start();
         }
     }
 }

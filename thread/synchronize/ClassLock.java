@@ -34,7 +34,7 @@ public class ClassLock {
         }
     }
 
-    // 锁当前类的.class属性
+    // 锁当前类的.class属性（类对象）
     public void lockClass() {
         try {
             synchronized (ClassLock.class) {
