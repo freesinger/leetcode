@@ -34,19 +34,17 @@
 // @lc code=start
 class Solution {
     public int maxArea(int[] height) {
-        if (height.length == 1 || height == null) return 0;
-        // if (height.length == 2) return Math.min(height[0], height[1]) ;
-
         int left = 0, right = height.length - 1;
-        int maxWater = 0;
+        int max = -1;
+        
         while (left < right) {
             int curWater = Math.min(height[left], height[right]) * (right - left);
-            if (height[left] <= height[right]) left++;
+            max = Math.max(max, curWater);
+            if (height[left] < height[right]) left++;
             else right--;
-            maxWater = Math.max(maxWater, curWater);
         }
-
-        return maxWater;
+        
+        return max;
     }
 }
 // @lc code=end

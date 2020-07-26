@@ -12,6 +12,27 @@ import java.util.stream.Collectors;
 public class Tools {
     private static Logger logger = LoggerFactory.getLogger(Tools.class);
 
+
+    public static ListNode constructLinkedList(int[] nums) {
+        assert nums != null;
+        ListNode root = new ListNode(nums[0]);
+        ListNode dummy = root;
+        if (nums.length == 1) return root;
+
+        try {
+            for (int i = 1; i < nums.length; i++) {
+                root.next = new ListNode(nums[i]);
+                root = root.next;
+            }
+        } catch (Exception e) {
+            logger.error("Construct linked list from array failed!");
+            e.printStackTrace();
+        }
+
+        return dummy;
+    }
+
+
     public static void traceArray(int[] A) {
         try {
             for (int i : A)
@@ -88,8 +109,10 @@ public class Tools {
     public static void traceListNode(ListNode node) {
         if (node == null) return;
         while (node != null) {
-            System.out.println(node.value);
+            System.out.print(node.value);
+            System.out.print(" ");
             node = node.next;
         }
+        System.out.println();
     }
 }
