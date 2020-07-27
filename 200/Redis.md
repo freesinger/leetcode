@@ -96,7 +96,7 @@ AOF 的持久化文件比 RDB 大，恢复速度慢
 10. [Redis事务](https://redisbook.readthedocs.io/en/latest/feature/transaction.html#id2)
 
 Redis 通过 MULTI 、 DISCARD 、 EXEC 和 WATCH 四个命令来实现事务功能。
-符合ACID，无法rollback，事务不可嵌套。
+符合ACID，**无法rollback**，事务不可嵌套。
 
 11. 缓存穿透？怎么解决？
 
@@ -151,3 +151,5 @@ redis中sorted set的实现是这样的：
 - 当数据多的时候，sorted set是由一个dict + 一个skiplist来实现的。简单来讲，dict用来查询数据到分数的对应关系，而skiplist用来根据分数查询数据（可能是范围查找）。
 
 redis rehash过程？
+
+渐进式rehash：同时保证新旧两个hash表，慢慢迁移，完成了再替换 

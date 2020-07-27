@@ -29,11 +29,10 @@ public class RemoveKDigits {
 
         for (int i = 0; i < remove; i++) {
             int j = 0;
-            while (j < s.length() - 1) {
-                if (s.charAt(j) > s.charAt(j + 1)) {
+            for (; j < s.length()-1; j++) {
+                if (s.charAt(j) > s.charAt(j+1)) {
                     break;
                 }
-                j++;
             }
             s.delete(j, j + 1);
             // 去除头部的0，且要满足长度>1，否则会成为空串

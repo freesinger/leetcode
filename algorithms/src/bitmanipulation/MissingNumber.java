@@ -12,7 +12,7 @@ public class MissingNumber {
         MissingNumber test = new MissingNumber();
         int[] nums = new int[]{1, 2, 4, 2};
 
-        System.out.println(test.missingFromN(new int[]{0,1,3}));
+        System.out.println(test.missingFromN(new int[]{0, 1, 3}));
         System.out.println(test.findDupMiss(nums).toString());
     }
 

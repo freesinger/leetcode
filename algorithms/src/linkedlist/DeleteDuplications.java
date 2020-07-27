@@ -8,16 +8,12 @@ import src.utils.node.implement.ListNode;
  */
 public class DeleteDuplications {
     public static void main(String[] args) {
-        // TODO: testcase
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2, node1);
-        ListNode node3 = new ListNode(2, node2);
-        ListNode node4 = new ListNode(4, node3);
+        ListNode root = Tools.constructLinkedList(new int[]{1, 2, 3, 3, 4, 4, 5});
 
         DeleteDuplications deleteNode = new DeleteDuplications();
-        deleteNode.deleteDuplication(node4);
+        deleteNode.deleteDuplication(root);
 
-        Tools.traceListNode(node4);
+        Tools.traceListNode(root);
         //System.out.println("abcde".substring(0, 5));
     }
 
