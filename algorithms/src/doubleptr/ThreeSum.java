@@ -1,41 +1,16 @@
-/*
- * @lc app=leetcode.cn id=15 lang=java
- *
- * [15] 三数之和
- *
- * https://leetcode-cn.com/problems/3sum/description/
- *
- * algorithms
- * Medium (24.46%)
- * Likes:    2422
- * Dislikes: 0
- * Total Accepted:    286.9K
- * Total Submissions: 997.1K
- * Testcase Example:  '[-1,0,1,2,-1,-4]'
- *
- * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0
- * ？请你找出所有满足条件且不重复的三元组。
- * 
- * 注意：答案中不可以包含重复的三元组。
- * 
- * 
- * 
- * 示例：
- * 
- * 给定数组 nums = [-1, 0, 1, 2, -1, -4]，
- * 
- * 满足要求的三元组集合为：
- * [
- * ⁠ [-1, 0, 1],
- * ⁠ [-1, -1, 2]
- * ]
- * 
- * 
- */
+package src.doubleptr;
 
-// @lc code=start
-class Solution {
-    public List<List<Integer>> threeSum(int[] nums) {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class ThreeSum {
+
+    public static void main(String[] args) {
+        System.out.println(new ThreeSum().threeSum(new int[]{-4, -1, -1, 0, 1, 2}));
+    }
+
+    private List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
 
         if (nums == null || nums.length < 3) return res;
@@ -69,5 +44,3 @@ class Solution {
         return res;
     }
 }
-// @lc code=end
-

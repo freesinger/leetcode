@@ -41,7 +41,7 @@ class TopKNumber {
      * @return
      */
     private List<Integer> findKthMaxNumber(int[] nums, int k) {
-        // 最小堆找第k大树
+        // 最小堆找第k大数
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k);
         List<Integer> result = new LinkedList<>();
 

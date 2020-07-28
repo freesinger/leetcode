@@ -42,26 +42,19 @@ class Solution {
      * @return
      */
     public int[][] merge(int[][] intervals) {
-        int n = intervals.length;
+        if (intervals == null || intervals.length == 0 || intervals[0].length == 0) return intervals;
+        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
         LinkedList<int[]> res = new LinkedList<>();
-
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-        // Arrays.sort(intervals, new Comparator<int[]>() {
-        //     @Override
-        //     public int compare(int[] a, int[] b) {
-        //         return a[0] - b[0];
-        //     }
-        // });
-
-        for (int i = 0; i < n; i++) {
-            if (res.isEmpty() || res.getLast()[1] < intervals[i][0]) {
+        
+        for (int i = 0; i < intervals.length; i++) {
+            if (res.size() == 0 || res.getLast()[1] < intervals[i][0]) {
                 res.add(intervals[i]);
             } else {
                 res.getLast()[1] = Math.max(res.getLast()[1], intervals[i][1]);
             }
         }
-
-        return res.toArray(new int[res.size()][2]);
+        
+        return res.toArray(new int[res.size()-1][]);
     }
 }
 // @lc code=end

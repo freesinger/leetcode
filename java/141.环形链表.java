@@ -70,16 +70,15 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) return false;
-
-        ListNode slow = head;
-        ListNode fast = head.next;
+        
+        ListNode slow = head, fast = head.next;
+        
         while (slow != fast) {
             if (fast == null || fast.next == null) return false;
-            // 每一次都快一步，否则无法追及
             slow = slow.next;
             fast = fast.next.next;
         }
-
+        
         return true;
     }
 }

@@ -39,9 +39,13 @@
 
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        // recursive and divide conquer
-        if (lists.length == 0) return null;
-        return divideConquer(lists, 0, lists.length - 1);
+        if (lists == null || lists.length == 0) return null;
+        // return divideConquer(lists, 0, lists.length);
+        ListNode root = lists[0];
+        for (int i = 1; i < lists.length; i++) {
+            root = merge(root, lists[i]);
+        }
+        return root;
     }
 
     public ListNode divideConquer(ListNode[] lists, int l, int r) {
