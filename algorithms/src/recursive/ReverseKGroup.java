@@ -3,6 +3,9 @@ package src.recursive;
 import src.utils.Tools;
 import src.utils.node.implement.ListNode;
 
+/**
+ * 每k个一组翻转链表
+ */
 public class ReverseKGroup {
 
     /**
