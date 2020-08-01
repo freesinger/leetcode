@@ -1,18 +1,15 @@
-package src.array;
+package src.doubleptr;
 
 public class TwoSum {
-    private static int res;
-    //public int res;
-
     public static void main(String[] args) {
-        TwoSum main = new TwoSum();
-        main.sum(new int[]{1, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9}, 8);
-        System.out.println(res);
+        System.out.println(new TwoSum().sum(new int[]{1, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9}, 8));
     }
 
 
-    public void sum(int[] nums, int target) {
-        if (nums == null || nums.length == 0) return;
+    public int sum(int[] nums, int target) {
+        int res = 0;
+
+        if (nums == null || nums.length == 0) return 0;
         int left = 0, right = nums.length - 1;
 
         while (left < right) {
@@ -33,6 +30,7 @@ public class TwoSum {
                 }
 
             }
+
             if (nums[left] + nums[right] > target) {
                 right--;
             } else if (nums[left] + nums[right] < target) {
@@ -43,5 +41,6 @@ public class TwoSum {
                 right--;
             }
         }
+        return res;
     }
 }
