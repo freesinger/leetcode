@@ -27,6 +27,7 @@ public class InsertionSort {
      * @param A
      */
     public void insertionSort(int[] A) {
+        if (A == null || A.length <= 1) return;
         for (int i = 1; i < A.length; i++) {
             int cur = A[i];
             int j = i - 1;

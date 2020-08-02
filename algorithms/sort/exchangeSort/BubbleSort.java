@@ -15,9 +15,7 @@ public class BubbleSort {
         for (int i = 0; i < A.length - 1; i++) {
             for (int j = 0; j < A.length - i - 1; j++)
                 if (A[j] > A[j + 1]) {
-                    int t = A[j];
-                    A[j] = A[j + 1];
-                    A[j + 1] = t;
+                    Tools.swapByIndex(A, j, j + 1);
                 }
             Tools.traceArray(A);
         }
@@ -26,6 +24,5 @@ public class BubbleSort {
     public static void main(String[] args) {
         int[] arrayToSort = new int[]{8, 3, 1, 5, 2, 1};
         bubbleSort(arrayToSort);
-        return;
     }
 }

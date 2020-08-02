@@ -9,7 +9,7 @@ public class SelectionSort {
      * Time: O(n^2)
      * Space: O(1)
      *
-     * @param A
+     * @param A Array to sort
      */
     public static void selectionSort(int[] A) {
         for (int i = 0; i < A.length - 1; i++) {
@@ -17,9 +17,7 @@ public class SelectionSort {
             for (int j = i + 1; j < A.length; j++) {
                 minIdx = A[j] < A[minIdx] ? j : minIdx;
             }
-            int t = A[minIdx];
-            A[minIdx] = A[i];
-            A[i] = t;
+            Tools.swapByIndex(A, minIdx, i);
             Tools.traceArray(A);
         }
 
@@ -28,6 +26,5 @@ public class SelectionSort {
     public static void main(String[] args) {
         int[] arrayToSort = new int[]{8, 3, 1, 5, 2, 1};
         selectionSort(arrayToSort);
-        return;
     }
 }

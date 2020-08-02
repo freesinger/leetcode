@@ -15,7 +15,6 @@ public class SumInThirtySix {
         SumInThirtySix test = new SumInThirtySix();
         test.constructMap(toDecimal);
         System.out.println(test.sum("1b", "2x"));
-
     }
 
 

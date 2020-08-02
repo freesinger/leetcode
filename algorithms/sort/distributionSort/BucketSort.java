@@ -20,8 +20,6 @@ public class BucketSort extends AbstractSort implements Sorts {
     public BucketSort() {
     }
 
-    ;
-
     // 子类不继承父类构造器，只是显式(super)或隐式调用
     // 每一条隐式调用都省略了super()
     public BucketSort(int[] arrayToSort) {

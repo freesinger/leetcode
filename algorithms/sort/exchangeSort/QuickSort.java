@@ -26,18 +26,19 @@ public class QuickSort {
     }
 
     public int partition(int low, int high) {
-        int cur = low - 1;
+        // cur用来标记pivot的位置，找到一个比pivot小的数则cur++
+        int cur = low;
         int pivot = array[high];
 
         for (int j = low; j < high; j++) {
             if (array[j] < pivot) {
-                cur++;
                 Tools.swapByIndex(array, cur, j);
+                cur++;
             }
         }
-        Tools.swapByIndex(array, cur + 1, high); // 注意是cur+1
-
-        return cur + 1;
+        // 把pivot放到正确的位置
+        Tools.swapByIndex(array, cur, high);
+        return cur;
     }
 
     public void sort(int low, int high) {

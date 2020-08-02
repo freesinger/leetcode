@@ -1,4 +1,4 @@
-package sort.selectionSort;
+package sort.selectionSort.heapsort;
 
 import src.utils.Tools;
 
@@ -12,16 +12,16 @@ import java.util.Arrays;
  * @author: Shane
  * @date: 2020/5/29
  */
-public class HeapSort {
+public class MaxHeapSort {
     private int[] array;
 
-    public HeapSort(int[] array) {
+    public MaxHeapSort(int[] array) {
         this.array = array;
     }
 
     public static void main(String[] args) {
         final int[] test = new int[]{7, 16, 14, 10, 8, 1, 3, 12};
-        new HeapSort(test).heapSort();
+        new MaxHeapSort(test).heapSort();
         System.out.println(Arrays.toString(test));
     }
 
@@ -51,8 +51,8 @@ public class HeapSort {
         for (int i = heapSize - 1; i >= 0; i--) {
             Tools.swapByIndex(array, i, 0);
             Tools.traceArray(array);
-            heapSize--;
-            heapify(heapSize, 0);
+            //heapSize--;
+            heapify(i, 0);
             Tools.traceArray(array);
         }
     }
