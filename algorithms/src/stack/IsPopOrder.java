@@ -2,7 +2,7 @@ package src.stack;
 
 import java.util.Stack;
 
-public class IsPopOrder {
+public class  IsPopOrder {
     public static void main(String[] args) {
         IsPopOrder test = new IsPopOrder();
         System.out.println(test.isPopOrder(new int[]{1, 2, 3, 4, 5}, new int[]{4, 5, 3, 2, 1}));

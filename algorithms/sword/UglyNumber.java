@@ -1,7 +1,7 @@
 package sword;
 
 public class UglyNumber {
-    public int GetUglyNumber_Solution(int N) {
+    public int getUglyNumber(int N) {
         if (N <= 6) return N;
         int i2 = 0, i3 = 0, i5 = 0;
         int[] nums = new int[N];

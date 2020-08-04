@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 /**
  * 无重复字符的最长子串
- *
  */
 public class LengthOfLongestSubstring {
     public static void main(String[] args) {
@@ -21,12 +20,17 @@ public class LengthOfLongestSubstring {
         int max = 1;
 
         for (int i = 0; i < len; i++) {
-            if (map.containsKey(str.charAt(i))) {
-                left = Math.max(left, map.get(str.charAt(i)) + 1);
+            char ch = str.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+            while (map.get(ch) > 1) {
+                char ch2 = str.charAt(left);
+                left++;
+                map.put(ch2, map.get(ch2) - 1);
             }
-            map.put(str.charAt(i), i);
             max = Math.max(max, i - left + 1);
         }
+
+        System.out.println(str.substring(left, left + max));
 
         return max;
     }

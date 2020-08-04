@@ -1,9 +1,9 @@
-package src;
+package oj;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Solution {
+public class Pdd {
 
 //    public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);

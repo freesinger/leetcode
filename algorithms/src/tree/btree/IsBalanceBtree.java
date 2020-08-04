@@ -3,7 +3,7 @@ package src.tree.btree;
 import src.utils.node.implement.TreeNode;
 
 public class IsBalanceBtree {
-    private static boolean isBalanced = true;
+    private boolean isBalanced = true;
 
     public static void main(String[] args) {
         IsBalanceBtree test = new IsBalanceBtree();

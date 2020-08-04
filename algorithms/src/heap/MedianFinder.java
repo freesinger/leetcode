@@ -10,6 +10,8 @@ class MedianFinder {
 
     /**
      * initialize your data structure here.
+     *
+     * maxHeap + minHeap
      */
     public MedianFinder() {
         count = 0;
@@ -20,12 +22,15 @@ class MedianFinder {
     }
 
     public void addNum(int num) {
-        count++;
-        maxHeap.offer(num);
-        minHeap.offer(maxHeap.poll());
-        if (maxHeap.size() < minHeap.size()) {
+        if (count % 2 == 0) {
+            maxHeap.offer(num);
+            minHeap.offer(maxHeap.poll());
+        } else {
+            minHeap.offer(num);
             maxHeap.offer(minHeap.poll());
         }
+        // 最后更新size
+        count++;
     }
 
     public double findMedian() {

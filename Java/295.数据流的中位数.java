@@ -62,19 +62,20 @@ class MedianFinder {
     }
 
     public void addNum(int num) {
-        count++;
-        maxHeap.offer(num);
-        minHeap.offer(maxHeap.poll());
-        if (maxHeap.size() < minHeap.size()) {
+        if (count % 2 == 0) {
+            maxHeap.offer(num);
+            minHeap.offer(maxHeap.poll());
+        } else {
+            minHeap.offer(num);
             maxHeap.offer(minHeap.poll());
         }
+        count++;
     }
 
     public double findMedian() {
-        System.out.println(maxHeap.size());
-        System.out.println(minHeap.size());
-        
         //return (double) (maxHeap.size() > minHeap.size() ? maxHeap.peek() : ((minHeap.peek() + maxHeap.peek()) / 2));
+
+        //return (double) count % 2 == 1 ? minHeap.peek() : (minHeap.peek() + maxHeap.peek()) / 2;
         if (count % 2 == 0) {
             return (double) ((minHeap.peek() + maxHeap.peek()) / 2);
         } else return minHeap.peek();
