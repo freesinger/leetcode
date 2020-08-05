@@ -1,6 +1,7 @@
 package src.dp;
 
 /**
+ * 整数转换为字母组合
  * 状态转移方程：f(n) = f(n-1) + f（n-2)
  */
 public class NumDecoding {
