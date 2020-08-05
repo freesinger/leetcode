@@ -1,5 +1,7 @@
 package src.array;
 
+import com.sun.tools.corba.se.idl.StringGen;
+
 public class MoreThanHalf {
     public static void main(String[] args) {
         System.out.println(moreThanHalf(new int[]{1, 3, 2, 4, 2, 2, 2, 5, 2}));
