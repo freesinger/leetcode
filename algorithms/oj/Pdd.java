@@ -22,7 +22,7 @@ public class Pdd {
 //            }
 //        }
 //
-//        int total = 1;
+//        int toheaptal = 1;
 //        for (int i = 1; i < 7; i++) {
 //            for (int j = 1; j < 7; j++) {
 //                if (dp[i][j - 1] == 1000 && dp[i][j + 1] == 1000 && dp[i - 1][j] == 1000 && dp[i + 1][j] == 1000) {

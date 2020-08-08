@@ -2,32 +2,9 @@ package sort.mergeSort;
 
 import src.utils.Tools;
 
+import java.util.Arrays;
+
 public class MergeSort {
-//    private int[] array;
-//    private int[] result;
-
-//    public MergeSort(int[] array, int[] result) {
-//        this.array = array;
-//        this.result = result;
-//    }
-
-//    public void recursive(int[] array, int[] result, int left, int right) {
-//        if (left >= right) return;
-//        int mid = (right - left) >> 1 + left;
-//        recursive(array, result, left, mid);
-//        // Tools.traceArray(array);
-//        recursive(array, result, mid+1, right);
-//        // Tools.traceArray(array);
-//
-//        int i = left, j = mid, k = mid+1;
-//        while (left <= j && k <= right) {
-//            result[i++] = array[left] < array[k] ? array[left++] : array[k++];
-//        }
-//        while (left <= j) result[i++] = array[left++];
-//        while (k <= right) result[i++] = array[k++];
-//        // 排序完成写会原数组
-//        for (int start = left; start <= right; start++) array[start] = result[start];
-//    }
 
     private static void merge_sort_recursive(int[] arr, int[] result, int start, int end) {
         if (start >= end)
@@ -46,6 +23,7 @@ public class MergeSort {
             result[k++] = arr[start2++];
         for (k = start; k <= end; k++)
             arr[k] = result[k];
+        System.out.println(Arrays.toString(arr));
     }
 
 
