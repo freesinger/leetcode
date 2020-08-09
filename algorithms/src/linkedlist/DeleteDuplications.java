@@ -14,7 +14,6 @@ public class DeleteDuplications {
         deleteNode.deleteDuplication(root);
 
         Tools.traceListNode(root);
-        //System.out.println("abcde".substring(0, 5));
     }
 
     public ListNode deleteDuplication(ListNode pHead) {
