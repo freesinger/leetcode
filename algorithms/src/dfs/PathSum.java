@@ -5,6 +5,9 @@ import src.utils.node.implement.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 树中是否存在根节点到叶子结点的路径满足和为k
+ */
 public class PathSum {
     List<List<Integer>> res = new ArrayList<>();
 

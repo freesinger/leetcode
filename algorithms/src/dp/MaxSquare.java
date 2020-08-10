@@ -11,15 +11,15 @@ public class MaxSquare {
         int height = matrix.length, length = matrix[0].length;
         int[][] dp = new int[height + 1][length + 1];
 
-        for (int row = 0; row < height; row++) {
-            for (int col = 0; col < length; col++) {
-                if (matrix[row][col] == '1') {
-                    dp[row + 1][col + 1] = 1 + Math.min(dp[row][col], Math.min(dp[row + 1][col], dp[row][col + 1]));
-                    max = Math.max(max, dp[row + 1][col + 1]);
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= length; j++) {
+                if (matrix[i - 1][j - 1] == '1') {
+                    // 求出满足条件的最小正方形边长即可，因此是min
+                    dp[i][j] = 1 + Math.min(dp[i - 1][j - 1], Math.min(dp[i - 1][j], dp[i][j - 1]));
+                    max = Math.max(max, dp[i][j]);
                 }
             }
         }
-
         return max * max;
     }
 }

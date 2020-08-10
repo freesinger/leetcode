@@ -28,6 +28,7 @@ public class RobotPath {
         for (int[] p : pos) {
             dfs(flag, row + p[0], col + p[1], threshold);
         }
+        // dfs并不需要对状态进行撤销
     }
 
     public int posSum(int row, int col) {

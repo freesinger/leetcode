@@ -2,7 +2,6 @@ package src.string;
 
 /**
  * 翻转单次顺序列
- *
  */
 public class ReverseSentence {
     public static void main(String[] args) {
