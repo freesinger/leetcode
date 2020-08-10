@@ -1,14 +1,11 @@
 package src.doubleptr;
 
-import src.utils.Tools;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
 /**
  * 和为S的连续正整数序列
- *
  */
 public class FindContinuousSequence {
     public static void main(String[] args) {

@@ -2,7 +2,6 @@ package src.greedy;
 
 /**
  * 股票买卖的最大利润
- *
  */
 public class MaxMargin {
     public int maxProfit(int[] prices) {
