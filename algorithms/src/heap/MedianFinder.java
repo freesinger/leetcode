@@ -38,7 +38,7 @@ class MedianFinder {
 
         //return (double) count % 2 == 1 ? minHeap.peek() : (minHeap.peek() + maxHeap.peek()) / 2;
         if (count % 2 == 0) {
-            return (double) ((minHeap.peek() + maxHeap.peek()) / 2);
+            return (minHeap.peek() + maxHeap.peek()) / 2;
         } else return minHeap.peek();
     }
 }

@@ -15,6 +15,39 @@ public class SumInThirtySix {
         SumInThirtySix test = new SumInThirtySix();
         test.constructMap(toDecimal);
         System.out.println(test.sum("1b", "2x"));
+        System.out.println(addStrings("1b", "2x"));
+    }
+
+
+    // 简洁方案
+    private static String addStrings(String a, String b) {
+        if (a == null || b == null) return "";
+        StringBuilder res = new StringBuilder();
+        int carry = 0, i = a.length() - 1, j = b.length() - 1;
+
+        while (carry != 0 || i >= 0 || j >= 0) {
+            if (i >= 0) {
+                char ch = a.charAt(i);
+                if (ch >= '0' && ch <= '9') {
+                    carry += (ch - '0');
+                } else carry += (ch - 'a' + 10);
+                i--;
+            }
+
+            if (j >= 0) {
+                char ch = b.charAt(j);
+                if (ch >= '0' && ch <= '9') {
+                    carry += (ch - '0');
+                } else carry += (ch - 'a' + 10);
+                j--;
+            }
+
+            int cur = carry % 36;
+            carry /= 36;
+            res.insert(0, cur);
+        }
+
+        return res.toString();
     }
 
 
