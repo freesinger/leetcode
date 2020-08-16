@@ -48,47 +48,35 @@ import java.util.Queue;
 // @lc code=start
 class LRUCache {
     private Map<Integer, Integer> map;
-    private Queue<Integer> queue;
+    private Queue<Integer> cache;
     private int capacity;
 
     public LRUCache(int capacity) {
-        queue = new LinkedList<>();
+        cache = new LinkedList<>();
         map = new HashMap<>();
         this.capacity = capacity;
     }
 
     public int get(int key) {
-        if (!map.containsKey(key)) return -1;
-        else {
-            queue.remove(key);
-            queue.offer(key);
+        if (!cache.contains(key)) {
+            return -1;
+        } else {
+            cache.remove(key);
+            cache.add(key);
             return map.get(key);
         }
     }
 
     public void put(int key, int value) {
-        if (queue.size() < this.capacity) {
-            if (map.containsKey(key)) {
-                map.put(key, value);
-                // Time Limit Exceeded
-                queue.remove(key);
-                queue.offer(key);
-            } else {
-                queue.offer(key);
-                map.put(key, value);
-            }
+        map.put(key, value);
+        if (cache.contains(key)) {
+            cache.remove(key);
         } else {
-            if (map.containsKey(key)) {
-                map.put(key, value);
-                queue.remove(key);
-                queue.offer(key);
-            } else {
-                map.remove(queue.poll());
-                map.put(key, value);
-                queue.offer(key);
+            if (cache.size() == capacity) {
+                cache.poll();
             }
         }
-        // System.out.println(queue);
+        cache.offer(key);
     }
 }
 

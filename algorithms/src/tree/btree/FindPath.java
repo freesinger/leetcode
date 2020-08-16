@@ -5,7 +5,7 @@ import src.utils.node.implement.TreeNode;
 import java.util.ArrayList;
 
 /**
- * https://www.nowcoder.com/practice/b736e784e3e34731af99065031301bca?tpId=13&tqId=11177&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking&from=cyc_github
+ * 二叉树和为k的路径
  */
 public class FindPath {
     ArrayList<ArrayList<Integer>> result = new ArrayList<>();

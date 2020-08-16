@@ -25,7 +25,7 @@
 - 是否支持事务和奔溃恢复。InnoDB提供事务支持，外键等高级数据库功能，提供了具有提交、回滚、崩溃恢复能力的事务安全；
 MyISAM强调性能，查询具有原子性，速度一般比I更快，但不提供事务支持。
 - 是否支持行级锁：M是表级锁，I支持行级锁（默认）和表级锁
-- 是否支持MVCC：I支持。应对⾼并发事务, MVCC⽐单纯的加锁更⾼效;MVCC只在 READ COMMITTED 和 REPEATABLE READ 两个隔离级别下⼯作;MVCC可以使⽤ 乐观 (optimistic)锁 和 悲观(pessimistic)锁来实现;
+- 是否支持MVCC：I支持。应对⾼并发事务, MVCC⽐单纯的加锁更⾼效; MVCC只在 READ COMMITTED 和 REPEATABLE READ 两个隔离级别下⼯作;MVCC可以使⽤ 乐观 (optimistic)锁 和 悲观(pessimistic)锁来实现;
 - 外键支持：I支持，M不支持
 - 全文索引支持：I不支持，M支持
 

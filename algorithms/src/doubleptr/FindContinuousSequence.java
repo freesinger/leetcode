@@ -24,7 +24,6 @@ public class FindContinuousSequence {
             } else if (curSum > targetSum) {
                 curSum -= start;
                 start++;
-
             } else {
                 List<Integer> curList = new ArrayList<>();
                 for (int i = start; i <= end; i++) {

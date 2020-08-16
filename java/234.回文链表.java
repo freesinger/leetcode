@@ -67,7 +67,7 @@ class Solution {
         int left = 0;
         int right = nums.size() - 1;
         while (left <= right) {
-            if (nums.get(left).intValue() != nums.get(right).intValue()) return false;
+            if (!nums.get(left).equals(nums.get(right))) return false;
             left++;
             right--;
         }

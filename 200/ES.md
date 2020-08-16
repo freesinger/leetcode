@@ -27,12 +27,22 @@ index中的mappings就存储的各种字段以及其数据类型
 aggregation：Parent/Sibling Pipeline [官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline.html)
 [全家桶](https://blog.csdn.net/wangxiaotongfan/category_5593095.html)
 
-4. ES如何实现master结点选举的？
+4. ES如何实现master结点选举的？脑裂是什么？怎么避免？
 
 - 有ZenDiscovery模块负责，包含Ping和Unicast
 - 对于node.master:true的结点按nodeId排序，每个node选择0号作为自己投票对象
 - 当候选node票数过半的时候就可以成为master
 `master主要负责管理集群、node和index，不负责管理文档；data node做这些事，还可以选择关闭http功能`
+
+脑裂：
+- 网络问题 -- 节点间网络异常造成集群发生物理分离，造成脑裂问题
+- 节点负载 -- 如果 master 节点负载过高，则可能造成 master 节点停止响应，从而脱离集群，集群重新选主，恢复响应后出现脑裂问题
+
+解决：
+- 集群尽量部署在同一个内网环境中，从而保证各节点通讯的可靠性
+- master 节点与 data 节点分离，从而保证 master 节点的响应能力
+- 单播/多播
+- 最少包含Master节点数与存活检测时长
 
 5. 描述一下ES索引文档的过程？
 
@@ -57,7 +67,7 @@ aggregation：Parent/Sibling Pipeline [官方文档](https://www.elastic.co/guid
 
 7. 描述一下es搜索的过程？
 
-![Query & Fetch](../images/searchdoc.png)
+![Query & Fetch](../images/searchdoc.jpeg)
 
 大致分为`Query`和`Fetch`两个阶段：
 
