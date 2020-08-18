@@ -8,14 +8,18 @@ import src.utils.node.implement.ListNode;
  */
 public class DeleteDuplications {
     public static void main(String[] args) {
-        ListNode root = Tools.constructLinkedList(new int[]{1, 2, 3, 3, 4, 4, 5});
+        ListNode root = Tools.constructLinkedList(new int[]{1, 2, 3, 3});
+        ListNode root2 = Tools.constructLinkedList(new int[]{1, 2, 2, 3, 3, 4, 5, 5, 6});
 
         DeleteDuplications deleteNode = new DeleteDuplications();
-        deleteNode.deleteDuplication(root);
+        deleteNode.deleteDuplication(root2);
+        deleteNode.deleteToOnlyOne(root);
 
+        Tools.traceListNode(root2);
         Tools.traceListNode(root);
     }
 
+    // 重复无保留
     public ListNode deleteDuplication(ListNode pHead) {
         if (pHead == null || pHead.next == null) return pHead;
 
@@ -40,4 +44,22 @@ public class DeleteDuplications {
         return dummy.next;
     }
 
+    // 重复的只保留一个
+    public ListNode deleteToOnlyOne(ListNode root) {
+        if (root == null || root.next == null) return root;
+
+        ListNode dummy = root;
+        ListNode cur = root;
+        while (cur != null) {
+            if (root.value == cur.value) {
+                cur = cur.next;
+            } else {
+                root.next = cur;
+                root = cur;
+            }
+        }
+        root.next = null; // 1,2,3,3 root在第一个3等到下一个结点，注意置null
+
+        return dummy;
+    }
 }

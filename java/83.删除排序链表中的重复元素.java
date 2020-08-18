@@ -40,23 +40,37 @@
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
+        // if (head == null || head.next == null) return head;
+
+        // ListNode pre_head = head;
+        // ListNode cur = head;
+        // while (cur.next != null) {
+        //     if (head.val == cur.next.val) {
+        //         cur = cur.next;
+        //     } else {
+        //         head.next = cur.next;
+        //         head = head.next;
+        //         cur = head;
+        //     }
+        // }
+        // head.next = null;
+
+        // return pre_head;
         if (head == null || head.next == null) return head;
 
-        ListNode pre_head = head;
         ListNode dummy = head;
-        while (dummy.next != null) {
-            if (head.val == dummy.next.val) {
-                dummy = dummy.next;
-                continue;
+        ListNode cur = head;
+        while (cur != null) {
+            if (head.val == cur.val) {
+                cur = cur.next;
             } else {
-                head.next = dummy.next;
-                head = head.next;
-                dummy = head;
+                head.next = cur;
+                head = cur;
             }
         }
         head.next = null;
 
-        return pre_head;
+        return dummy;
     }
 }
 // @lc code=end

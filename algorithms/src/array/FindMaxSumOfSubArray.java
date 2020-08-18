@@ -2,11 +2,10 @@ package src.array;
 
 /**
  * 连续子数组的最大和
- *
  */
-public class FindGreatestSumOfSubArray {
+public class FindMaxSumOfSubArray {
     public static void main(String[] args) {
-        System.out.println(finMaxSum(new int[] {6, -3, -2, 7, -15, 1, 2, 2}));
+        System.out.println(finMaxSum(new int[]{6, -3, -2, 7, -15, 1, 2, 2}));
     }
 
     private static int finMaxSum(int[] array) {

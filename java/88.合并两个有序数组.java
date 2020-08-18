@@ -37,11 +37,22 @@ import java.util.Arrays;
 // @lc code=start
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int p = 0;
-        while (p < n) {
-            nums1[m++] = nums2[p++];
+        // if (m == 0) {
+        //     for (int i = 0; i < n; i++) {
+        //         nums1[i] = nums2[i];
+        //     }
+        // }
+        
+        int idx = n+m- 1;
+        m--;
+        n--;
+        while (m >= 0 && n >= 0 && idx >= 0) {
+            nums1[idx] = Math.max(nums1[m], nums2[n]);
+            if (nums1[m] < nums2[n]) n--;
+            else m--;
+            idx--;
         }
-        Arrays.sort(nums1);
+
     }
 }
 // @lc code=end

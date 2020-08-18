@@ -5,10 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * n个骰子的点数
+ */
 public class DicesSum {
     public List<Map.Entry<Integer, Double>> dicesSum(int n) {
         final int face = 6;
         final int pointNum = face * n;
+        // dp[i][j] 表示前 i 个骰子产生点数 j 的次数
         long[][] dp = new long[n + 1][pointNum + 1];
 
         for (int i = 1; i <= face; i++)

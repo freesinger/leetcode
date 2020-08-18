@@ -3,7 +3,7 @@ package src.binarysearch;
 /**
  * 搜索旋转数组中是否存在某数
  * 要求O(logn)
- *
+ * 始终优先在有序数组中进行二分查找
  */
 public class SearchRollSortedArr {
     public int search(int[] nums, int target) {

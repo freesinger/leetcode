@@ -11,7 +11,7 @@ import java.util.Queue;
 public class IsSymmetryTree {
     boolean isSymmetrical(TreeNode pRoot) {
         if (pRoot == null) return false;
-        return isSiblingsSymmetry(pRoot.left, pRoot.right);
+        return isSiblingsSymmetry(pRoot, pRoot);
     }
 
     // 递归
@@ -19,7 +19,8 @@ public class IsSymmetryTree {
         if (left == null && right == null) return true;
         if (left == null || right == null) return false;
         if (left.value != right.value) return false;
-        return isSiblingsSymmetry(left.right, right.left);
+        return isSiblingsSymmetry(left.right, right.left) &&
+                isSiblingsSymmetry(left.left, right.right);
     }
 
     // 迭代

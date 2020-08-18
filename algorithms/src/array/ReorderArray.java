@@ -5,9 +5,9 @@ import src.utils.Tools;
 import java.util.Arrays;
 
 /**
- * 重拍数组，奇前偶后
+ * 重排数组，奇前偶后
  */
-public class ReOrderArray {
+public class ReorderArray {
     public static void main(String[] args) {
         int[] test = new int[]{1, 2, 3, 4, 5, 6};
         reorder(test);

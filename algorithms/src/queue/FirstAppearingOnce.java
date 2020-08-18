@@ -1,8 +1,12 @@
 package src.queue;
 
+import java.util.BitSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 字符串中第一个只出现一次的字符
+ */
 public class FirstAppearingOnce {
     private int[] cnts = new int[256];
     private Queue<Character> queue = new LinkedList<>();
@@ -19,7 +23,31 @@ public class FirstAppearingOnce {
     }
 
     //return the first appearence once char in current stringstream
-    public char FirstAppearingOnce() {
+    public char firstAppearingOnce() {
         return queue.isEmpty() ? '#' : queue.peek();
+    }
+
+
+    private char firstAppearance(String s) {
+        BitSet bs1 = new BitSet(256);
+        BitSet bs2 = new BitSet(256);
+
+        for (char c : s.toCharArray()) {
+            if (!bs1.get(c) && !bs2.get(c)) {
+                bs1.set(c);
+            } else if (bs1.get(c) && !bs2.get(c)) {
+                bs2.set(c);
+            }
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if (bs1.get(c) && bs2.get(c)) {
+                return c;
+            }
+        }
+
+        return 0;
     }
 }
