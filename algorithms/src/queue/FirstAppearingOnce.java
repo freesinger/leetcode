@@ -28,6 +28,12 @@ public class FirstAppearingOnce {
     }
 
 
+    /**
+     * 使用bitset
+     *
+     * @param s
+     * @return
+     */
     private char firstAppearance(String s) {
         BitSet bs1 = new BitSet(256);
         BitSet bs2 = new BitSet(256);

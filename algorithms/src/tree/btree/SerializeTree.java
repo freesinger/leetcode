@@ -2,6 +2,9 @@ package src.tree.btree;
 
 import src.utils.node.implement.TreeNode;
 
+/**
+ * 序列化二叉树
+ */
 public class SerializeTree {
     private int index = -1;
 
@@ -15,7 +18,6 @@ public class SerializeTree {
         if (root == null) return "#";
         return root.value + " " + serialize(root.left) + serialize(root.right);
     }
-
 
     public TreeNode deserialize(String str) {
         String[] s = str.split(" ");
