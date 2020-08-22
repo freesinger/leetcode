@@ -3,14 +3,40 @@ package src.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import src.utils.node.implement.ListNode;
+import src.utils.node.implement.TreeNode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Tools {
     private static Logger logger = LoggerFactory.getLogger(Tools.class);
+
+
+    public static TreeNode constructBST(int[] nums) {
+        assert nums != null && nums.length > 0;
+        TreeNode root = new TreeNode(nums[0]);
+        if (nums.length == 1) return root;
+        Queue<TreeNode> curList = new LinkedList<>();
+//
+//        try {
+//            curList.offer(root);
+//            while (!curList.isEmpty()) {
+//                int size = curList.size();
+//                for (int i = 0; i < size; i++) {
+//                    TreeNode curNode = curList.poll();
+//                    curList.offer(nums[i+1]);
+//                    curList.offer(curNode.right);
+//                }
+//            }
+//            for (int i = 1; i < nums.length; i++) {
+//                root.left = nums[i] == -1 ? null : new TreeNode((Integer) nums[i]);
+//                root.right = nums
+//            }
+//        }
+
+
+        return root;
+    }
 
 
     public static ListNode constructLinkedList(int[] nums) {
