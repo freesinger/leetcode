@@ -9,7 +9,7 @@
 2. select? poll? epoll?
 
 [RBtree](https://zhuanlan.zhihu.com/p/93609693)
-epoll不会让每个 socke t的等待队列都添加进程A引用，而是在等待队列，添加 eventPoll对象的引用。
+epoll不会让每个socket的等待队列都添加进程A引用，而是在等待队列，添加eventPoll对象的引用。
 当socket就绪时，中断程序会操作eventPoll，在eventPoll中的就绪列表(rdlist)，添加scoket引用。
 这样的话，进程A只需要不断循环遍历rdlist，从而获取就绪的socket。
 从代码来看每次执行到epoll_wait，其实都是去遍历 rdlist。

@@ -14,8 +14,6 @@ public class CountingSort extends AbstractSort implements Sorts {
     public CountingSort() {
     }
 
-    ;
-
     public CountingSort(int[] arr) {
         this.arr = arr;
     }
