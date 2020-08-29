@@ -13,17 +13,31 @@ xx是一个非常富有朝气和潜力的公司，非常希望自己能够加入
 
 
 
-
-
 老师您好，很荣幸能参加这次面试。
 我叫王镇宇，本科毕业于华中科技大学计算机科学与技术学院，现在在华北计算技术研究所攻读计算机应用的硕士学位，方向为信息检索，目前研二。
 
 本科在校期间完成各项学业之余积极参与各项竞赛，获得过大学生英语竞赛二等奖，华中科技大学"编程之美"三等奖等奖项。
-研究生期间主要从事后端开发，参与过数据资产管理平台的构建，主要任务使用ElasticSearch API实现传统RDB的接口，优化数据库的检索效率，提升数据库与ES同步的速度等。
+研究生期间主要从事Java后端开发，参与过数据资产管理平台的构建，主要任务使用ElasticSearch API实现传统RDB的接口，优化数据库的检索效率，提升数据库与ES同步的速度等。
 我对数据分析和机器学习算法也很感兴趣，课余时间经常使用python去解决一些实际问题，比如参加kaggle竞赛，优化聚类算法等等。
 与此同时我还是一个开源社区的活跃分子，经常在github和各种论坛，分享或者讨论自己的项目和想法。
 
-商汤是一个技术实力雄厚且富有潜力的公司，我非常期待自己能够加入。
+虾皮是一个技术实力雄厚且富有潜力的公司，我非常期待自己能够加入。
+
+Good afternoon, I am honored to participate in this interview.
+My name is Wang Zhenyu. I graduated from the School of Computer Science and Technology of Huazhong University of Science and Technology.
+I am currently persuing my master degree in computer applications at the North China Institute of Computing Technology.
+
+After completing my studies during my undergraduate period, I actively participated in various competitions, and won the second prize of college English competition 
+and the third prize of "The Beauty of Programming" of Huazhong University of Science and Technology.
+During the postgraduate period, I was mainly engaged in Java back-end development and participated in the construction of a data asset management platform. 
+The main task was to use ElasticSearch API to implement traditional RDB interfaces, optimize database retrieval efficiency, 
+and improve the speed of database and ES synchronization.
+I am also very interested in data analysis and machine learning algorithms. I often use python to solve some practical problems in my spare time, 
+such as participating in kaggle competitions and optimizing clustering algorithms.
+At the same time, I am still an active member of the open source community, often sharing or discussing my projects and ideas on github and various forums.
+
+Shopee is a company with strong technical strength and potential. I look forward to joining it.
+
 
 
 
