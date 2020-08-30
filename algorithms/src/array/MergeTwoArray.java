@@ -3,7 +3,7 @@ package src.array;
 import java.util.Arrays;
 
 /**
- * 合并数组
+ * 合并两个有序数组
  */
 public class MergeTwoArray {
     public static void main(String[] args) {
