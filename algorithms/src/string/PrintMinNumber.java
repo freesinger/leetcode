@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 整数数组组合出的最小整数
- *
  */
 public class PrintMinNumber {
     public static void main(String[] args) {

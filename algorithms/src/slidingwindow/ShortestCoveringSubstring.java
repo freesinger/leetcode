@@ -6,7 +6,7 @@ import java.util.HashMap;
  * 最小覆盖子串
  * TODO: Debug
  */
-public class Substring {
+public class ShortestCoveringSubstring {
     public static void main(String[] args) {
         System.out.println(getShortestSubString("ADOBECODEBANC", "ABC"));
     }

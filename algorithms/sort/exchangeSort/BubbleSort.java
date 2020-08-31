@@ -14,9 +14,7 @@ public class BubbleSort {
     public static void bubbleSort(int[] A) {
         for (int i = 0; i < A.length - 1; i++) {
             for (int j = 0; j < A.length - i - 1; j++)
-                if (A[j] > A[j + 1]) {
-                    Tools.swapByIndex(A, j, j + 1);
-                }
+                if (A[j] > A[j + 1]) Tools.swapByIndex(A, j, j + 1);
             Tools.traceArray(A);
         }
     }

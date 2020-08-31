@@ -20,7 +20,6 @@ public class RealizeQueueUseStack {
         System.out.println(queue.poll()); // 2
     }
 
-
     public void offer(int node) {
         in.push(node);
     }

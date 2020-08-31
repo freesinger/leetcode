@@ -5,7 +5,7 @@ package src.array;
  */
 public class CanComplete {
     public static void main(String[] args) {
-        System.out.println(canCompleteTrip(new int[]{1,2,3,4,5}, new int[]{3,4,5,1,2}));
+        System.out.println(canCompleteTrip(new int[]{1, 2, 3, 4, 5}, new int[]{3, 4, 5, 1, 2}));
     }
 
     private static int canCompleteTrip(int[] gas, int[] cost) {

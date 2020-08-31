@@ -13,7 +13,33 @@ public class Tools {
 
 
     /**
-     * 构建一个二叉搜索树
+     * （排序）数组构建BST
+     *
+     * @param nums
+     * @param left  初值0
+     * @param right 初值nums.length
+     * @return
+     */
+    public static TreeNode constructBST(int[] nums, int left, int right) {
+        if (left > right) return null;
+        Arrays.sort(nums);
+        int mid = left + (right - left) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+
+        try {
+            root.left = constructBST(nums, left, mid - 1);
+            root.right = constructBST(nums, mid + 1, right);
+        } catch (Exception e) {
+            logger.error("Construct BST failed");
+            e.printStackTrace();
+        }
+
+        return root;
+    }
+
+
+    /**
+     * 层次遍历构建一个二叉搜索树
      *
      * @param nums -1代表null结点
      * @return root

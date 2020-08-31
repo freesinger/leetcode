@@ -2,7 +2,6 @@ package src.string;
 
 /**
  * 左旋转字符串
- *
  */
 public class LeftRotateString {
     public static void main(String[] args) {

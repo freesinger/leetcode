@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 实现 . 和 * 的正则表达式匹配
- *
  */
 public class RegularExpressionMatch {
     public static void main(String[] args) {

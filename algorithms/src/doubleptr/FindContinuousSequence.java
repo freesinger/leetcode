@@ -3,7 +3,6 @@ package src.doubleptr;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * 和为S的连续正整数序列
  */
@@ -19,11 +18,9 @@ public class FindContinuousSequence {
 
         while (end < targetSum) {
             if (curSum < targetSum) {
-                end++;
-                curSum += end;
+                curSum += ++end;
             } else if (curSum > targetSum) {
-                curSum -= start;
-                start++;
+                curSum -= start++;
             } else {
                 List<Integer> curList = new ArrayList<>();
                 for (int i = start; i <= end; i++) {
@@ -31,8 +28,7 @@ public class FindContinuousSequence {
                 }
                 result.add(curList);
 
-                curSum -= start;
-                start++;
+                curSum -= start++;
             }
         }
 

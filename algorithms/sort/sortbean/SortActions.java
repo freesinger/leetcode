@@ -17,8 +17,6 @@ public class SortActions {
     public SortActions() {
     }
 
-    ;
-
     public SortActions(int[] array) {
         this.array = array;
     }

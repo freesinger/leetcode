@@ -20,9 +20,7 @@ public class PathSum {
         if (node == null) return;
         curList.add(node.value);
         curSum += node.value;
-        if (curSum == sum && node.left == null && node.right == null) {
-            res.add(curList);
-        }
+        if (curSum == sum && node.left == null && node.right == null) res.add(curList);
         if (node.left != null) dfs(node.left, curSum, sum, new ArrayList<>(curList));
         if (node.right != null) dfs(node.right, curSum, sum, new ArrayList<>(curList));
     }

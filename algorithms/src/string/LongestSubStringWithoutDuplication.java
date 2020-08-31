@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 最长无重复子字符串
- *
  */
 public class LongestSubStringWithoutDuplication {
     public int longestSubStringWithoutDuplication(String str) {

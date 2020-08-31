@@ -2,6 +2,9 @@ package src.linkedlist;
 
 import src.utils.node.implement.ListNode;
 
+/**
+ * 倒数K个结点
+ */
 class KthNodeFromEnd {
     public ListNode FindKthToTail(ListNode head, int k) {
         if (head == null) return head;

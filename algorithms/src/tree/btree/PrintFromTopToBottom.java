@@ -1,4 +1,4 @@
-package src.queue;
+package src.tree.btree;
 
 import src.utils.node.implement.TreeNode;
 
@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 二叉树层次遍历
+ */
 public class PrintFromTopToBottom {
     public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();

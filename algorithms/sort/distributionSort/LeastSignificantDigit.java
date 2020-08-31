@@ -12,8 +12,6 @@ public class LeastSignificantDigit extends AbstractSort implements Sorts {
     public LeastSignificantDigit() {
     }
 
-    ;
-
     public LeastSignificantDigit(List<Integer> list) {
         this.list = list;
     }

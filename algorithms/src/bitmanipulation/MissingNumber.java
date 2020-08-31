@@ -84,8 +84,4 @@ public class MissingNumber {
 
         return list;
     }
-
-
-    // TODO: 消失的第一个正数
-    //  https://leetcode-cn.com/problems/first-missing-positive/solution/tong-pai-xu-python-dai-ma-by-liweiwei1419/
 }

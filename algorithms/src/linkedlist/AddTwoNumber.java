@@ -2,6 +2,9 @@ package src.linkedlist;
 
 import src.utils.node.implement.ListNode;
 
+/**
+ * 链表加法
+ */
 public class AddTwoNumber {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) return null;
