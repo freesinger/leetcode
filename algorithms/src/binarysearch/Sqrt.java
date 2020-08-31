@@ -4,9 +4,11 @@ package src.binarysearch;
  * 实现sqrt函数
  */
 public class Sqrt {
+    private static final double EPSILON = 1e-10;
     public static void main(String[] args) {
         System.out.println(sqrt(7));
-        System.out.println(sqrt(4.109, 0.120));
+        System.out.println(sqrt(4.109, EPSILON));
+        System.out.println(Math.sqrt(4.109));
     }
 
     private static int sqrt(int n) {

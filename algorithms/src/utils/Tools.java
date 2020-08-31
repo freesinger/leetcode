@@ -12,30 +12,32 @@ public class Tools {
     private static Logger logger = LoggerFactory.getLogger(Tools.class);
 
 
+    /**
+     * 构建一个二叉搜索树
+     *
+     * @param nums -1代表null结点
+     * @return root
+     */
     public static TreeNode constructBST(int[] nums) {
         assert nums != null && nums.length > 0;
-        TreeNode root = new TreeNode(nums[0]);
-        if (nums.length == 1) return root;
-        Queue<TreeNode> curList = new LinkedList<>();
-//
-//        try {
-//            curList.offer(root);
-//            while (!curList.isEmpty()) {
-//                int size = curList.size();
-//                for (int i = 0; i < size; i++) {
-//                    TreeNode curNode = curList.poll();
-//                    curList.offer(nums[i+1]);
-//                    curList.offer(curNode.right);
-//                }
-//            }
-//            for (int i = 1; i < nums.length; i++) {
-//                root.left = nums[i] == -1 ? null : new TreeNode((Integer) nums[i]);
-//                root.right = nums
-//            }
-//        }
+        if (nums.length == 1) return new TreeNode(nums[0]);
+        LinkedList<TreeNode> nodes = new LinkedList<>();
+        for (int num : nums) nodes.addLast(new TreeNode(num));
+        int len = nums.length, left, right;
 
+        try {
+            for (int i = 0; i < len; i++) {
+                TreeNode curNode = nodes.get(i);
+                left = i * 2 + 1;
+                right = i * 2 + 2;
+                curNode.left = (left >= len || nums[left] == -1) ? null : nodes.get(left);
+                curNode.right = (right >= len || nums[right] == -1) ? null : nodes.get(right);
+            }
+        } catch (Exception e) {
+            logger.error(e.toString());
+        }
 
-        return root;
+        return nodes.getFirst();
     }
 
 
@@ -58,6 +60,24 @@ public class Tools {
         return dummy;
     }
 
+    public static void traceTree(TreeNode root) {
+        if (root == null) return;
+        List<Integer> vals = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                TreeNode curNode = queue.poll();
+                assert curNode != null;
+                vals.add(curNode.value);
+                if (curNode.left != null) queue.offer(curNode.left);
+                if (curNode.right != null) queue.offer(curNode.right);
+            }
+        }
+        traceList(vals);
+    }
 
     public static void traceArray(int[] A) {
         try {
