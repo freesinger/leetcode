@@ -1,3 +1,4 @@
+# 1
 老师您好，很荣幸能参加这次面试。
 我叫王镇宇，本科毕业于华中科技大学计算机科学与技术学院，现在在华北计算技术研究所攻读计算机应用的硕士学位，方向为信息检索。
 
@@ -12,17 +13,19 @@
 xx是一个非常富有朝气和潜力的公司，非常希望自己能够加入。
 
 
-
+# 2
 老师您好，很荣幸能参加这次面试。
 我叫王镇宇，本科毕业于华中科技大学计算机科学与技术学院，现在在华北计算技术研究所攻读计算机应用的硕士学位，方向为信息检索，目前研二。
 
+我熟悉Java和Python编程，了解Java底层原理，可以熟练编程解决项目中的难题。
 本科在校期间完成各项学业之余积极参与各项竞赛，获得过大学生英语竞赛二等奖，华中科技大学"编程之美"三等奖等奖项。
 研究生期间主要从事Java后端开发，参与过数据资产管理平台的构建，主要任务使用ElasticSearch API实现传统RDB的接口，优化数据库的检索效率，提升数据库与ES同步的速度等。
 我对数据分析和机器学习算法也很感兴趣，课余时间经常使用python去解决一些实际问题，比如参加kaggle竞赛，优化聚类算法等等。
-与此同时我还是一个开源社区的活跃分子，经常在github和各种论坛，分享或者讨论自己的项目和想法。pp
+与此同时我还是一个开源社区的活跃分子，经常在github和各种论坛，分享或者讨论自己的项目和想法。
 
-BIGO是一个技术实力雄厚且富有潜力的公司，我非常期待自己能够加入。
+美团是一个技术实力雄厚且富有潜力的公司，我非常期待自己能够加入。
 
+# 3
 Good afternoon, I am honored to participate in this interview.
 My name is Wang Zhenyu. I graduated from the School of Computer Science and Technology of Huazhong University of Science and Technology.
 I am currently persuing my master degree in computer applications at the North China Institute of Computing Technology.

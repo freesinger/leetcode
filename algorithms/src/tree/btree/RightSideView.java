@@ -9,7 +9,6 @@ import java.util.Queue;
 
 /**
  * 二叉树的右视图
- *
  */
 public class RightSideView {
     public List<Integer> rightSideView(TreeNode root) {
@@ -21,7 +20,7 @@ public class RightSideView {
 
         while (!queue.isEmpty()) {
             int nodeNum = queue.size();
-            while (nodeNum-- > 0){
+            while (nodeNum-- > 0) {
                 TreeNode curNode = queue.poll();
                 if (curNode.left != null) queue.offer(curNode.left);
                 if (curNode.right != null) queue.offer(curNode.right);

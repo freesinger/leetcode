@@ -128,4 +128,4 @@ TODO
 - 先查log是不是抛异常了，如果web应用部署在tomcat上再查tomcat log；
 - 检查GC，是不是堆内存分配满了(是不是OOM了)，从而导致jvm不断地进行full gc
 - 网络
-- 。。。
+- IO
