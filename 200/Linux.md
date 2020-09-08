@@ -6,8 +6,16 @@
 
 子进程返回值0，父进程返回子进程id
 
-2. select? poll? epoll?
+2. select? poll? epoll? 区别？
 
+epoll：
+- 是一种Linux内核系统调用，用来实现可扩展的IO时间通知机制
+- 用来监控多个fd来判断它们中谁可以就绪来进行IO
+- 一开始设计用来取代select和poll，用来实现IO频繁以及fd较多情况下的高效率IO
+- 
+
+
+- 区别
 [RBtree](https://zhuanlan.zhihu.com/p/93609693)
 epoll不会让每个socket的等待队列都添加进程A引用，而是在等待队列，添加eventPoll对象的引用。
 当socket就绪时，中断程序会操作eventPoll，在eventPoll中的就绪列表(rdlist)，添加scoket引用。
