@@ -4,7 +4,7 @@
 - String：
 - Hash：
 - Set：
-- ZSet：
+- ZSet：[跳表]((https://juejin.im/post/57fa935b0e3dd90057c50fbc#heading-1))
 
 2. 为什么要用Redis？优缺点？
 
@@ -23,7 +23,9 @@
 - 受物理内存的限制，无法对海量数据进行高性能读写
 - 适合的场景主要局限在较小数据量的高性能操作和运算上
 
-3. Redis和Memcached区别？![图](../images/redisMemchache.png)
+3. Redis和Memcached区别？
+
+![图](../images/redisMemchache.png)
 
 - 数据结构：5种，字符串
 - 性能：单线程小数据量前者优秀，大数据后者优秀
@@ -139,14 +141,16 @@ Redis 通过 MULTI 、 DISCARD 、 EXEC 和 WATCH 四个命令来实现事务功
 - 多使用hash
 - 编码优化，控制编码类型
 - 控制key的个数
+  
     
-    
+
 epoll?
 
 Redis 为什么用跳表而不用平衡树？
 
 redis中sorted set的实现是这样的：
   [优质解答](https://juejin.im/post/57fa935b0e3dd90057c50fbc#heading-1)
+
 - 当数据较少时，sorted set是由一个ziplist来实现的。
 - 当数据多的时候，sorted set是由一个dict + 一个skiplist来实现的。简单来讲，dict用来查询数据到分数的对应关系，而skiplist用来根据分数查询数据（可能是范围查找）。
 

@@ -56,7 +56,7 @@ aggregation：Parent/Sibling Pipeline [官方文档](https://www.elastic.co/guid
 
 5. 描述一下ES索引文档的过程？
 
-![索引文件的过程](../images/esindexfile.png)
+![索引文件的过程](../images/esindexfile.jpg)
 
 - 接收到一个write请求之后，**协调结点**负责选择合适的shard，路由计算公式`shard = hash(doc_id) % (num_of_primary_shard)`
 - 假设分配到shard0，则有shard0主分片所在节点来完成数据写入操作

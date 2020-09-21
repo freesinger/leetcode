@@ -1,6 +1,6 @@
 1. 数据库三大范式说一下？
 
-```text
+```mysql
 /* 建表规范 */ ------------------
     -- Normal Format, NF
         - 每个表保存一个实体信息
@@ -100,7 +100,7 @@ ReadView就是生成一个列表存储当前事务开始的时候引擎中活跃
 
 - Multi-range Read：减少磁盘的随机访问，转化为顺序访问，适用于range之类的条件sql
 - Index Condition Pushdown(ICP)：索引下推，英文名更好理解，条件下推，就是把where条件语句的判断时机提前到了在引擎检索阶段。
-传统的是先把数据取出来再filter。适用于rang、ref等语句。
+传统的是先把数据取出来再filter。适用于range、ref等语句。
 
 [索引的特点、优缺点](https://juejin.im/post/5da5b61e518825798038f072#heading-2)
 
@@ -149,7 +149,7 @@ ReadView就是生成一个列表存储当前事务开始的时候引擎中活跃
 三条记录a,b,c，因为是按照数据大小排序，因此事务修改b的时候，区间[a, b),(b, c]都会被加锁
 ```
 - **Next-Key Lock（读取行时采用）：record+gap，锁定index记录本身和索引范围，解决了幻读**
-    
+  
 ```text
 除了select是读锁S，其他操作都是写锁X
 意向锁是InnoDB自动加的，不需要用户干涉   
@@ -187,15 +187,13 @@ select查询语句大致如上，**修改数据**操作则需要涉及到redolog
 - redolog：只有InnoDB拥有，也是它拥有crash-safe能力的原因，记录的是物理日志（记录每个页的修改），主要用来实现重做，保证数据库事务的持久性，每次重启服务都会按redolog重做。
 - undolog：和redolog类似，不过是记录的**逻辑日志**（记录一条反向操作），主要用来实现MVCC、回滚等
 
-
-
 **16. 项目中翻页太慢你怎么解决的?**
 
 - 排查是不是数据库内存分配的不够
 - 看一下有没有用index,判断能否使用index提高效率
 - 看慢查询日志,定位最耗时的sql语句,主要原因是因为limit offset,size语句是把(offset+size)前面所有数据都查出来再过滤的,翻页翻到后面很自然效率极差
 采用inner join来优化,主要是限定时间字段段范围来查询(更高效的是用主键索引的范围直接查,不需要二次查找)
-```sql
+```mysql
 select * from A as a inner join (select b.ID from B as b limit 10000, 1000) on a.ID = b.ID;
 ```
 - 尝试index优化,ICP边查边过滤
