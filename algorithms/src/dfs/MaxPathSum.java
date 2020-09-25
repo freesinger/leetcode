@@ -4,7 +4,6 @@ import src.utils.node.implement.TreeNode;
 
 /**
  * 二叉树中最大路径和
- *
  */
 public class MaxPathSum {
     private int max = Integer.MIN_VALUE;
