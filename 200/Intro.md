@@ -21,7 +21,12 @@ xx是一个非常富有朝气和潜力的公司，非常希望自己能够加入
 本科在校期间完成各项学业之余积极参与各项竞赛，获得过大学生英语竞赛二等奖，华中科技大学"编程之美"三等奖等奖项。
 研究生期间主要从事Java后端开发，参与过数据资产管理平台的构建，主要任务使用ElasticSearch API实现传统RDB的接口，优化数据库的检索效率，提升数据库与ES同步的速度等。
 我对数据分析和机器学习算法也很感兴趣，课余时间经常使用python去解决一些实际问题，比如参加kaggle竞赛，优化聚类算法等等。
-与此同时我还是一个开源社区的活跃分子，经常在github和各种论坛，分享或者讨论自己的项目和想法。
+~~与此同时我还是一个开源社区的活跃分子，经常在github和各种论坛，分享或者讨论自己的项目和想法。~~
+
+我非常热爱IT行业，经常在课余时间钻研互联网的各项前沿技术，一直坚持在自己的github上记录自己的学习和成长过程
+
+与此同时，我还是一个热爱生活的人，最大的爱好是摄影和游泳。
+我非常享受和家人以及朋友呆在一起的时间，大家也都认为我是一个幽默有趣好相处的人。
 
 xx是一个技术实力雄厚且富有潜力的公司，我非常期待自己能够加入。
 
@@ -40,18 +45,6 @@ such as participating in kaggle competitions and optimizing clustering algorithm
 At the same time, I am still an active member of the open source community, often sharing or discussing my projects and ideas on github and various forums.
 
 Shopee is a company with strong technical strength and potential. I look forward to joining it.
-
-
-
-
-
-
-
-
-~~我非常热爱IT行业，经常在课余时间钻研互联网的各项前沿技术，一直坚持在自己的github上记录自己的学习和成长过程~~
-
-与此同时，我还是一个热爱生活的人，最大的爱好是摄影和游泳。~~，闲暇之余经常出门去领略大千世界的各色烟火，用相机记录下人间烟火。~~
-我非常享受和家人以及朋友呆在一起的时间，大家也都认为我是一个幽默有趣好相处的人。
 
 
 
