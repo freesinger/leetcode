@@ -8,12 +8,20 @@ import java.util.List;
  */
 public class PrintMatrix {
     public static void main(String[] args) {
-        int[][] matrix = new int[3][4];
+        int[][] matrix = new int[9][7];
         int val = 1;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 7; j++) {
                 matrix[i][j] = val++;
             }
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.println();
         }
 
         printMatrix(matrix);

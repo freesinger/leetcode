@@ -1,5 +1,7 @@
 package src.dfs;
 
+import src.utils.Const;
+import src.utils.Tools;
 import src.utils.node.implement.TreeNode;
 
 /**
@@ -9,8 +11,7 @@ public class MaxPathSum {
     private int max = Integer.MIN_VALUE;
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        // TODO
+        TreeNode root = Tools.constructBST(Const.BST);
         System.out.println(new MaxPathSum().maxPathSum(root));
     }
 
