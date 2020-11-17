@@ -17,7 +17,7 @@ public class Tools {
      *
      * @param nums
      * @param left  初值0
-     * @param right 初值nums.length
+     * @param right 初值nums.length-1
      * @return
      */
     public static TreeNode constructBST(int[] nums, int left, int right) {
